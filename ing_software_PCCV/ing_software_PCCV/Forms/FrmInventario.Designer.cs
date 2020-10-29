@@ -38,6 +38,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
@@ -102,6 +103,7 @@
             // gbMenu
             // 
             this.gbMenu.Controls.Add(this.btnModificar);
+            this.gbMenu.Controls.Add(this.btnBuscar);
             this.gbMenu.Controls.Add(this.btnEliminar);
             this.gbMenu.Controls.Add(this.txtBuscar);
             this.gbMenu.Location = new System.Drawing.Point(1015, 125);
@@ -117,7 +119,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(23, 46);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(287, 27);
+            this.txtBuscar.Size = new System.Drawing.Size(191, 27);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.Text = "Buscar";
             this.txtBuscar.MouseEnter += new System.EventHandler(this.txtBuscar_MouseEnter);
@@ -128,7 +130,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(122, 122);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 29);
-            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
@@ -137,9 +139,19 @@
             this.btnModificar.Location = new System.Drawing.Point(122, 184);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(81, 29);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(231, 44);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(81, 29);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "OK";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmInventario
             // 
@@ -177,5 +189,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
