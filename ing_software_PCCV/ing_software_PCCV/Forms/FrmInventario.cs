@@ -18,7 +18,7 @@ namespace ing_software_PCCV.Forms
             InitializeComponent();
         }
 
-        private DmVisualizarProductos ODm = new DmVisualizarProductos();
+        private DmProductos ODm = new DmProductos();
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -51,12 +51,13 @@ namespace ing_software_PCCV.Forms
             mostrarProductos();
         }
 
+        int idProducto;
         private void dgvMostrar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnModificar.Enabled = true;
             if (dgvMostrar.SelectedRows.Count > 0)
             {
-                
+                idProducto = Convert.ToInt16(dgvMostrar.CurrentRow.Cells["IdProducto"].Value.ToString());
                 txtNombre.Text = dgvMostrar.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = dgvMostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = dgvMostrar.CurrentRow.Cells["Precio"].Value.ToString();

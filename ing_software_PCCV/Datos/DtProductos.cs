@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Datos
 {
-    public class DtVisualizarProductos
+    public class DtProductos
     {
         private Conexion conexion = new Conexion();
         SqlDataReader leer;
@@ -25,6 +25,21 @@ namespace Datos
             tabla.Load(leer);
             return tabla;
            
+        }
+
+        public void Editar(int id, string nombre, string descripcion, double precio, int stock, string talla)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idProducto", id);
+            comando.Parameters.AddWithValue("@Nombre", nombre);
+            comando.Parameters.AddWithValue("@Descripcion", descripcion);
+            comando.Parameters.AddWithValue("@Precio", precio);
+            comando.Parameters.AddWithValue("@Stock", stock);
+            comando.Parameters.AddWithValue("@Talla", talla);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
         }
     }
 }

@@ -8,10 +8,10 @@ using System.Data;
 
 namespace Controlador
 {
-    public class DmVisualizarProductos
+    public class DmProductos
     {
 
-        private DtVisualizarProductos oDt = new DtVisualizarProductos();
+        private DtProductos oDt = new DtProductos();
 
         public DataTable MostrarProductos()
         {
@@ -20,6 +20,10 @@ namespace Controlador
             return tabla;
         }
 
+        public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla)
+        {
+            oDt.Editar(Convert.ToInt16(id), nombre, descripcion,, Convert.ToDouble(precio), Convert.ToInt16(stock), talla);
+        }
 
     }
 }
