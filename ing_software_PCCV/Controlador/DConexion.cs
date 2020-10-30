@@ -8,11 +8,6 @@ namespace Controlador
 {
     public class DConexion
     {
-        public string conectar()
-        {
-            Conexion con = new Conexion();
-            string val = con.abrir();
-            return val;
-        }
-    }
+
+          }
 }

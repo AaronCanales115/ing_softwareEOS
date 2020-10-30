@@ -44,7 +44,7 @@ namespace ing_software_PCCV.Forms
 
         private void mostrarProductos()
         {
-            dgvMostrar.DataSource = ODm.mostrar();
+            
         }
     }
 }

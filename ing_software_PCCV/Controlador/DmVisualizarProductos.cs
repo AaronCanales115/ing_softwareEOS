@@ -10,13 +10,8 @@ namespace Controlador
 {
     public class DmVisualizarProductos
     {
-        private DtVisualizarProductos oDt = new DtVisualizarProductos(); 
+     
 
-        public DataTable mostrar()
-        {
-            DataTable tabla = new DataTable();
-            tabla = oDt.mostrar();
-            return tabla;
-        }
+    
     }
 }

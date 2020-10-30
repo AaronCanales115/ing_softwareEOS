@@ -48,9 +48,7 @@ namespace ing_software_PCCV
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            DConexion con = new DConexion();
-           string val = con.conectar();
-            MessageBox.Show(val + "A ver si da");
+            
         }
     }
 }
