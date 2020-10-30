@@ -19,6 +19,7 @@ namespace ing_software_PCCV.Forms
         }
 
         private DmProductos ODm = new DmProductos();
+        string idProducto;
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -27,12 +28,12 @@ namespace ing_software_PCCV.Forms
 
         private void txtBuscar_MouseEnter(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
+            //txtBuscar.Text = "";
         }
 
         private void txtBuscar_MouseLeave(object sender, EventArgs e)
         {
-            txtBuscar.Text = "Buscar";
+            //txtBuscar.Text = "Buscar";
             
         }
 
@@ -46,7 +47,8 @@ namespace ing_software_PCCV.Forms
             string categoria = "1";
             string usuario = "1";
             string estado = "1";
-            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla, categoria, estado, usuario);
+            string resultado = "da";
+            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla, categoria, estado, usuario, resultado);
             mostrarProductos();
             MessageBox.Show("Funciona");
         }
@@ -61,7 +63,7 @@ namespace ing_software_PCCV.Forms
             mostrarProductos();
         }
 
-        string idProducto;
+        
         private void dgvMostrar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnModificar.Enabled = true;
@@ -78,6 +80,12 @@ namespace ing_software_PCCV.Forms
             {
                 MessageBox.Show("Seleccione una fila");
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar b = new Buscar();
+            b.Filtrar(dgvMostrar, this.txtBuscar.Text.Trim());
         }
     }
 }
