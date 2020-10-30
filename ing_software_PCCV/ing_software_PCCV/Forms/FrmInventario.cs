@@ -27,12 +27,12 @@ namespace ing_software_PCCV.Forms
 
         private void txtBuscar_MouseEnter(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
+          //  txtBuscar.Text = "";
         }
 
         private void txtBuscar_MouseLeave(object sender, EventArgs e)
         {
-            txtBuscar.Text = "Buscar";
+         //   txtBuscar.Text = "Buscar";
             
         }
 
@@ -78,6 +78,12 @@ namespace ing_software_PCCV.Forms
             {
                 MessageBox.Show("Seleccione una fila");
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar b = new Buscar();
+            b.Filtrar(dgvMostrar, this.txtBuscar.Text.Trim());
         }
     }
 }

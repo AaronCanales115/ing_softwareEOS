@@ -19,7 +19,7 @@ namespace Datos
         {
             tabla.Clear();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SELECT idProducto as ID ,Producto.Nombre ,Producto.Descripcion ,Producto.Precio ,Producto.Stock ,Producto.Talla FROM Producto";
+            comando.CommandText = "SELECT idProducto as ID ,Producto.Nombre ,Producto.Descripcion ,Producto.Precio ,Producto.Stock ,Producto.Talla,EstadoProducto.Estado FROM Producto,EstadoProducto WHERE Producto.Estado = EstadoProducto.idEstadoProducto";
             comando.CommandType = CommandType.Text;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
