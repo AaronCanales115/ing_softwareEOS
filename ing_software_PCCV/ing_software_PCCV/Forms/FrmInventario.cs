@@ -43,7 +43,10 @@ namespace ing_software_PCCV.Forms
             string precio = txtPrecio.Text;
             string stock = txtStock.Text;
             string talla = txtTalla.Text;
-            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla);
+            string categoria = "1";
+            string usuario = "1";
+            string estado = "1";
+            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla, categoria, estado, usuario);
             mostrarProductos();
             MessageBox.Show("Funciona");
         }

@@ -20,9 +20,9 @@ namespace Controlador
             return tabla;
         }
 
-        public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla)
+        public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla, string categoria, string estado, string usuario)
         {
-            oDt.Editar(Convert.ToInt16(id), nombre, descripcion, Convert.ToDouble(precio), Convert.ToInt16(stock), talla);
+            oDt.Editar(Convert.ToInt16(id), nombre, descripcion, Convert.ToDouble(precio), Convert.ToInt16(stock), talla, Convert.ToInt16(categoria), Convert.ToInt16(estado), Convert.ToInt16(usuario));
         }
 
     }
