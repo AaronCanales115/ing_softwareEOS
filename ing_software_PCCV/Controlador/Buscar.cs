@@ -38,3 +38,21 @@ namespace Controlador
         }
     }
 }
+/*
+CREATE PROCEDURE SPFiltroBusqueda 
+@Filtro as nvarchar(100)
+AS
+BEGIN
+	 SELECT idProducto as ID
+       ,Producto.Nombre
+	   ,Producto.Descripcion
+	   ,Producto.Precio
+	   ,Producto.Stock
+	   ,Producto.Talla
+	   ,Categoria.Nombre
+	   ,EstadoProducto.Estado
+       FROM Producto, Categoria,EstadoProducto
+	   WHERE Producto.idCategoria = Categoria.idCategoria AND Producto.Estado = EstadoProducto.idEstadoProducto AND Producto.Nombre LIKE @Filtro + '%'
+END
+GO
+*/
