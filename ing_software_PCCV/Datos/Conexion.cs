@@ -4,32 +4,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
+
 namespace Datos
 {
     class Conexion
     {
-        string cadena = "Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True";
-        public SqlConnection conectarbd = new SqlConnection();
+        //string cadena = "Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True";
+        public SqlConnection conexion = new SqlConnection("Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True");
 
-        public Conexion()
+        //public Conexion()
+        //{
+        //    conectarbd.ConnectionString = cadena;
+        //}
+
+        //public void abrir()
+        //{
+        //    try
+        //    {
+        //        conectarbd.Open();
+        //        Console.WriteLine("Conexion exitosa");
+        //    }catch(Exception ex)
+        //    {
+        //        Console.WriteLine("Error en la conexion " + ex);
+        //    }
+        //}
+        //public void cerrar()
+        //{
+        //    conectarbd.Close();
+        //}
+
+        public SqlConnection AbrirConexion()
         {
-            conectarbd.ConnectionString = cadena;
+            if (conexion.State == ConnectionState.Closed)
+                conexion.Open();
+            return conexion;
         }
 
-        public void abrir()
+        public SqlConnection CerrarConexion()
         {
-            try
-            {
-                conectarbd.Open();
-                Console.WriteLine("Conexion exitosa");
-            }catch(Exception ex)
-            {
-                Console.WriteLine("Error en la conexion " + ex);
-            }
-        }
-        public void cerrar()
-        {
-            conectarbd.Close();
+            if (conexion.State == ConnectionState.Open)
+                conexion.Close();
+            return conexion;
         }
     }
 }
