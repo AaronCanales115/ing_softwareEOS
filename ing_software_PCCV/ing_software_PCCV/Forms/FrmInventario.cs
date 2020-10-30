@@ -38,7 +38,14 @@ namespace ing_software_PCCV.Forms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+            string nombre = txtNombre.Text;
+            string descripcion = txtDescripcion.Text;
+            string precio = txtPrecio.Text;
+            string stock = txtStock.Text;
+            string talla = txtTalla.Text;
+            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla);
+            mostrarProductos();
+            MessageBox.Show("Funciona");
         }
 
         private void mostrarProductos()
@@ -51,13 +58,13 @@ namespace ing_software_PCCV.Forms
             mostrarProductos();
         }
 
-        int idProducto;
+        string idProducto;
         private void dgvMostrar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnModificar.Enabled = true;
             if (dgvMostrar.SelectedRows.Count > 0)
             {
-                idProducto = Convert.ToInt16(dgvMostrar.CurrentRow.Cells["IdProducto"].Value.ToString());
+                idProducto = dgvMostrar.CurrentRow.Cells["ID"].Value.ToString();
                 txtNombre.Text = dgvMostrar.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = dgvMostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = dgvMostrar.CurrentRow.Cells["Precio"].Value.ToString();

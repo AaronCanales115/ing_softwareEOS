@@ -30,7 +30,7 @@ namespace Datos
         public void Editar(int id, string nombre, string descripcion, double precio, int stock, string talla)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarProducto";
+            comando.CommandText = "SPActualizarProducto";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idProducto", id);
             comando.Parameters.AddWithValue("@Nombre", nombre);

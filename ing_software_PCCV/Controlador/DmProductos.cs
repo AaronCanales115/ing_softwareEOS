@@ -22,7 +22,7 @@ namespace Controlador
 
         public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla)
         {
-            oDt.Editar(Convert.ToInt16(id), nombre, descripcion,, Convert.ToDouble(precio), Convert.ToInt16(stock), talla);
+            oDt.Editar(Convert.ToInt16(id), nombre, descripcion, Convert.ToDouble(precio), Convert.ToInt16(stock), talla);
         }
 
     }
