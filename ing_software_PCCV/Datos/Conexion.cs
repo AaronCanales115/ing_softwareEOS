@@ -47,5 +47,17 @@ namespace Datos
                 conexion.Close();
             return conexion;
         }
+
+        /*
+        SELECT idProducto as ID
+       ,Producto.Nombre
+	   ,Producto.Descripcion
+	   ,Producto.Precio
+	   ,Producto.Stock
+	   ,Producto.Talla
+        FROM Producto; 
+        
+        
+        */
     }
 }
