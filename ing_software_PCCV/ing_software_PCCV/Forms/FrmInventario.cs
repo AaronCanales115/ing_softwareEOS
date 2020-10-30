@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
 
 namespace ing_software_PCCV.Forms
 {
@@ -16,6 +17,8 @@ namespace ing_software_PCCV.Forms
         {
             InitializeComponent();
         }
+
+        private DmVisualizarProductos ODm = new DmVisualizarProductos();
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -31,6 +34,17 @@ namespace ing_software_PCCV.Forms
         {
             txtBuscar.Text = "Buscar";
             
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Forms.FrmModificarProducto FrmModificarProducto = new FrmModificarProducto();
+            FrmModificarProducto.Show();
+        }
+
+        private void mostrarProductos()
+        {
+            dgvMostrar.DataSource = ODm.mostrar();
         }
     }
 }
