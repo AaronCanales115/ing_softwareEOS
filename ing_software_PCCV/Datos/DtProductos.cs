@@ -39,8 +39,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@Stock", stock);
             comando.Parameters.AddWithValue("@Talla", talla);
             comando.Parameters.AddWithValue("@Categoria", categoria);
-            comando.Parameters.AddWithValue("@Estado", stock);
-            comando.Parameters.AddWithValue("@Usuario", talla);
+            comando.Parameters.AddWithValue("@Estado", estado);
+            comando.Parameters.AddWithValue("@Usuario", usuario);
             comando.Parameters.AddWithValue("@Resultado", resultado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
