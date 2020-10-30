@@ -82,7 +82,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(30, 183);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(193, 23);
-            this.txtPrecio.TabIndex = 1;
+            this.txtPrecio.TabIndex = 3;
             // 
             // label4
             // 
@@ -98,7 +98,7 @@
             this.txtStock.Location = new System.Drawing.Point(30, 255);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(193, 23);
-            this.txtStock.TabIndex = 1;
+            this.txtStock.TabIndex = 4;
             // 
             // label5
             // 
@@ -132,7 +132,7 @@
             this.comboBox1.Location = new System.Drawing.Point(30, 392);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 24);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox1.TabIndex = 6;
             // 
             // btnFinalizar
             // 
@@ -148,7 +148,7 @@
             this.txtTalla.Location = new System.Drawing.Point(30, 323);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(193, 23);
-            this.txtTalla.TabIndex = 1;
+            this.txtTalla.TabIndex = 5;
             // 
             // FrmModificarProducto
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.txtNombreP);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmModificarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar producto";
