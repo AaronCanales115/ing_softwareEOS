@@ -79,6 +79,11 @@ namespace ing_software_PCCV.Forms
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnModificar_Click_2(object sender, EventArgs e)
+        {
             string nombre = txtNombre.Text;
             string descripcion = txtDescripcion.Text;
             string precio = txtPrecio.Text;

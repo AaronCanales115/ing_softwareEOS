@@ -41,6 +41,7 @@
             this.txtTalla = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -189,6 +189,15 @@
             this.txtStock.Size = new System.Drawing.Size(193, 23);
             this.txtStock.TabIndex = 12;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(129, 429);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_2);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -246,13 +255,6 @@
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nombre";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(112, 169);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 17;
             // 
             // btnEliminar
             // 
