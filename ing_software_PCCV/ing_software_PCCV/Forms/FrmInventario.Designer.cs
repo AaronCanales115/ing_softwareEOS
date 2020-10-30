@@ -35,10 +35,10 @@
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.gbMenu = new System.Windows.Forms.GroupBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
@@ -113,27 +113,6 @@
             this.gbMenu.TabStop = false;
             this.gbMenu.Text = "Menú";
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscar.Location = new System.Drawing.Point(23, 46);
-            this.txtBuscar.Multiline = true;
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(191, 27);
-            this.txtBuscar.TabIndex = 1;
-            this.txtBuscar.Text = "Buscar";
-            this.txtBuscar.MouseEnter += new System.EventHandler(this.txtBuscar_MouseEnter);
-            this.txtBuscar.MouseLeave += new System.EventHandler(this.txtBuscar_MouseLeave);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(122, 122);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(81, 29);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(122, 184);
@@ -153,6 +132,27 @@
             this.btnBuscar.Text = "OK";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(122, 122);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(81, 29);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscar.Location = new System.Drawing.Point(23, 46);
+            this.txtBuscar.Multiline = true;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(191, 27);
+            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.Text = "Buscar";
+            this.txtBuscar.MouseEnter += new System.EventHandler(this.txtBuscar_MouseEnter);
+            this.txtBuscar.MouseLeave += new System.EventHandler(this.txtBuscar_MouseLeave);
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -167,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInventario";
             this.Text = "FrmInventario";
+            this.Load += new System.EventHandler(this.FrmInventario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();

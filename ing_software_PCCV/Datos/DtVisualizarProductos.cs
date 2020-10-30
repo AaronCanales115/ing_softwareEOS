@@ -19,11 +19,12 @@ namespace Datos
         {
             tabla.Clear();
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "";
+            comando.CommandText = "SELECT idProducto as ID ,Producto.Nombre ,Producto.Descripcion ,Producto.Precio ,Producto.Stock ,Producto.Talla FROM Producto";
             comando.CommandType = CommandType.Text;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             return tabla;
+           
         }
     }
 }

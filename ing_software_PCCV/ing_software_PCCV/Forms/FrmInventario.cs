@@ -44,7 +44,12 @@ namespace ing_software_PCCV.Forms
 
         private void mostrarProductos()
         {
-            
+            dgvMostrar.DataSource = ODm.MostrarProductos();
+        }
+
+        private void FrmInventario_Load(object sender, EventArgs e)
+        {
+            mostrarProductos();
         }
     }
 }
