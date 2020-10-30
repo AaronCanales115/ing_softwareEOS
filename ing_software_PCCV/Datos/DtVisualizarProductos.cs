@@ -19,7 +19,10 @@ namespace Datos
         {
             tabla.Clear();
             comando.Connection = conexion.AbrirConexion();
-
+            comando.CommandText = "";
+            comando.CommandType = CommandType.Text;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
             return tabla;
         }
     }
