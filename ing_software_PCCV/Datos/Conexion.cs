@@ -11,8 +11,8 @@ namespace Datos
     public class Conexion
     {
         //string cadena = "Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True";
-       // public SqlConnection conexion = new SqlConnection("Data Source = AARONPC; Initial Catalog = dbStore; Integrated Security = True");
-       public SqlConnection conexion = new SqlConnection("Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True");
+       public SqlConnection conexion = new SqlConnection("Data Source = AARONPC; Initial Catalog = dbStore; Integrated Security = True");
+      // public SqlConnection conexion = new SqlConnection("Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True");
 
         //public Conexion()
         //{
