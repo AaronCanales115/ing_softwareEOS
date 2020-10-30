@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
 
 namespace ing_software_PCCV
 {
@@ -43,6 +44,13 @@ namespace ing_software_PCCV
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            DConexion con = new DConexion();
+           string val = con.conectar();
+            MessageBox.Show(val + "A ver si da");
         }
     }
 }
