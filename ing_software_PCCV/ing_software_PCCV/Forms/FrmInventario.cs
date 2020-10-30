@@ -38,8 +38,7 @@ namespace ing_software_PCCV.Forms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Forms.FrmModificarProducto FrmModificarProducto = new FrmModificarProducto();
-            FrmModificarProducto.Show();
+            
         }
 
         private void mostrarProductos()
@@ -50,6 +49,24 @@ namespace ing_software_PCCV.Forms
         private void FrmInventario_Load(object sender, EventArgs e)
         {
             mostrarProductos();
+        }
+
+        private void dgvMostrar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnModificar.Enabled = true;
+            if (dgvMostrar.SelectedRows.Count > 0)
+            {
+                
+                txtNombre.Text = dgvMostrar.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtDescripcion.Text = dgvMostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
+                txtPrecio.Text = dgvMostrar.CurrentRow.Cells["Precio"].Value.ToString();
+                txtStock.Text = dgvMostrar.CurrentRow.Cells["Stock"].Value.ToString();
+                txtTalla.Text = dgvMostrar.CurrentRow.Cells["Talla"].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila");
+            }
         }
     }
 }
