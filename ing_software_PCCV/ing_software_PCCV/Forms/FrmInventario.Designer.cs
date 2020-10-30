@@ -85,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(437, 10);
+            this.label1.Location = new System.Drawing.Point(456, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(362, 24);
             this.label1.TabIndex = 0;
@@ -134,6 +134,7 @@
             this.gbMenu.Controls.Add(this.txtTalla);
             this.gbMenu.Controls.Add(this.label7);
             this.gbMenu.Controls.Add(this.txtStock);
+            this.gbMenu.Controls.Add(this.btnModificar);
             this.gbMenu.Controls.Add(this.label6);
             this.gbMenu.Controls.Add(this.txtPrecio);
             this.gbMenu.Controls.Add(this.label5);
@@ -141,10 +142,9 @@
             this.gbMenu.Controls.Add(this.label4);
             this.gbMenu.Controls.Add(this.txtNombre);
             this.gbMenu.Controls.Add(this.label3);
-            this.gbMenu.Controls.Add(this.btnModificar);
             this.gbMenu.Location = new System.Drawing.Point(973, 116);
             this.gbMenu.Name = "gbMenu";
-            this.gbMenu.Size = new System.Drawing.Size(328, 568);
+            this.gbMenu.Size = new System.Drawing.Size(328, 505);
             this.gbMenu.TabIndex = 0;
             this.gbMenu.TabStop = false;
             this.gbMenu.Text = "Actualizar Datos";
@@ -152,7 +152,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 510);
+            this.comboBox1.Location = new System.Drawing.Point(31, 268);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 24);
             this.comboBox1.TabIndex = 16;
@@ -160,7 +160,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 490);
+            this.label8.Location = new System.Drawing.Point(28, 248);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 15;
@@ -168,7 +168,7 @@
             // 
             // txtTalla
             // 
-            this.txtTalla.Location = new System.Drawing.Point(23, 464);
+            this.txtTalla.Location = new System.Drawing.Point(31, 222);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(193, 23);
             this.txtTalla.TabIndex = 14;
@@ -176,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 444);
+            this.label7.Location = new System.Drawing.Point(28, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 13;
@@ -184,7 +184,7 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(23, 418);
+            this.txtStock.Location = new System.Drawing.Point(31, 176);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(193, 23);
             this.txtStock.TabIndex = 12;
@@ -192,7 +192,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 398);
+            this.label6.Location = new System.Drawing.Point(28, 156);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 11;
@@ -200,7 +200,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(23, 372);
+            this.txtPrecio.Location = new System.Drawing.Point(31, 130);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(193, 23);
             this.txtPrecio.TabIndex = 10;
@@ -208,7 +208,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 352);
+            this.label5.Location = new System.Drawing.Point(28, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 17);
             this.label5.TabIndex = 9;
@@ -216,16 +216,16 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(23, 303);
+            this.txtDescripcion.Location = new System.Drawing.Point(18, 361);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(293, 46);
+            this.txtDescripcion.Size = new System.Drawing.Size(293, 49);
             this.txtDescripcion.TabIndex = 8;
             this.txtDescripcion.Text = "";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 286);
+            this.label4.Location = new System.Drawing.Point(111, 324);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 7;
@@ -233,7 +233,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(23, 260);
+            this.txtNombre.Location = new System.Drawing.Point(31, 69);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(193, 23);
             this.txtNombre.TabIndex = 6;
@@ -241,7 +241,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 240);
+            this.label3.Location = new System.Drawing.Point(28, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 5;
@@ -249,27 +249,26 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Silver;
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnModificar.Location = new System.Drawing.Point(112, 169);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(104, 30);
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 17;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(0, 0);
+            this.btnEliminar.BackColor = System.Drawing.Color.Salmon;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Location = new System.Drawing.Point(1022, 652);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(229, 27);
             this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar Producto";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // txtBuscar
             // 
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscar.Location = new System.Drawing.Point(23, 46);
+            this.txtBuscar.Location = new System.Drawing.Point(685, 80);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(191, 27);
@@ -284,11 +283,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.gbMenu);
             this.Controls.Add(this.dgvMostrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnEliminar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInventario";
@@ -327,7 +326,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
+  
     }
 }
