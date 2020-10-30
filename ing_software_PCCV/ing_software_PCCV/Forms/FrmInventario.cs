@@ -28,12 +28,12 @@ namespace ing_software_PCCV.Forms
 
         private void txtBuscar_MouseEnter(object sender, EventArgs e)
         {
-            //txtBuscar.Text = "";
+            txtBuscar.Text = "";
         }
 
         private void txtBuscar_MouseLeave(object sender, EventArgs e)
         {
-            //txtBuscar.Text = "Buscar";
+            txtBuscar.Text = "Buscar";
             
         }
 
