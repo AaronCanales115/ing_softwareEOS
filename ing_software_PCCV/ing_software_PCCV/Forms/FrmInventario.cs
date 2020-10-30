@@ -39,18 +39,7 @@ namespace ing_software_PCCV.Forms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string descripcion = txtDescripcion.Text;
-            string precio = txtPrecio.Text;
-            string stock = txtStock.Text;
-            string talla = txtTalla.Text;
-            string categoria = "1";
-            string usuario = "1";
-            string estado = "1";
-            string resultado = "da";
-            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla, categoria, estado, usuario, resultado);
-            mostrarProductos();
-            MessageBox.Show("Funciona");
+            
         }
 
         private void mostrarProductos()
@@ -86,6 +75,22 @@ namespace ing_software_PCCV.Forms
         {
             Buscar b = new Buscar();
             b.Filtrar(dgvMostrar, this.txtBuscar.Text.Trim());
+        }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text;
+            string descripcion = txtDescripcion.Text;
+            string precio = txtPrecio.Text;
+            string stock = txtStock.Text;
+            string talla = txtTalla.Text;
+            string categoria = "1";
+            string usuario = "1";
+            string estado = "1";
+            string resultado = "da";
+            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla, categoria, estado, usuario, resultado);
+            mostrarProductos();
+            MessageBox.Show("Funciona");
         }
     }
 }
