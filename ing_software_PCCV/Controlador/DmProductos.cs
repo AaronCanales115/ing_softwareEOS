@@ -25,5 +25,9 @@ namespace Controlador
             oDt.Editar(Convert.ToInt16(id), nombre, descripcion, Convert.ToDecimal(precio), Convert.ToInt16(stock), talla, Convert.ToInt16(categoria), Convert.ToInt16(estado), Convert.ToInt16(usuario), resultado);
         }
 
+        public void eliminar(string id, string usuario, string resultado)
+        {
+            oDt.Eliminar(Convert.ToInt16(id), Convert.ToInt16(usuario), resultado);
+        }
     }
 }

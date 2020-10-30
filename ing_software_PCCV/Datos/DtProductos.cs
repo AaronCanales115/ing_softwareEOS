@@ -45,5 +45,17 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
+
+        public void Eliminar(int id, int usuario, string resultado)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SPEliminarProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idProducto", id);
+            comando.Parameters.AddWithValue("@Usuario", usuario);
+            comando.Parameters.AddWithValue("@Resultado", resultado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+        }
     }
 }

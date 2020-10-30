@@ -97,5 +97,16 @@ namespace ing_software_PCCV.Forms
             mostrarProductos();
             MessageBox.Show("Funciona");
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string usuario = "1";
+            string resultado = "1";
+            string id = dgvMostrar.CurrentRow.Cells["ID"].Value.ToString();
+            ODm.eliminar(id, usuario, resultado);
+            MessageBox.Show("Producto eliminado");
+            mostrarProductos();
+            
+        }
     }
 }
