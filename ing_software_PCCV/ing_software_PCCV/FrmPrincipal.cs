@@ -43,12 +43,15 @@ namespace ing_software_PCCV
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            DmLogin log = new DmLogin();
+            log.CerrarSesion("1");
+
             Application.Exit();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

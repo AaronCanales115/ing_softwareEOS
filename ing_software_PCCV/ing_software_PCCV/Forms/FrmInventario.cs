@@ -108,5 +108,16 @@ namespace ing_software_PCCV.Forms
             mostrarProductos();
             
         }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            Buscar b = new Buscar();
+            b.Filtrar(dgvMostrar,this.txtBuscar.Text.Trim());
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
