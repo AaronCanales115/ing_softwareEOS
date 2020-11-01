@@ -12,8 +12,11 @@ namespace ing_software_PCCV
 {
     public partial class Login : Form
     {
+        DmConsultas consultas = new DmConsultas();
+        DmObtenerIP IP = new DmObtenerIP();
         DmLogin lg = new DmLogin();
         FrmPrincipal p = new FrmPrincipal();
+        
         public Login()
         {
             InitializeComponent();
@@ -21,24 +24,56 @@ namespace ing_software_PCCV
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+           
+            string IPM = IP.ObtenerMac();
+           string ip = consultas.ConsultaSimple("SELECT IpMaquina.idUsuario FROM IpMaquina WHERE ipMaquina ='"+IPM.Trim()+"'");
+          Console.WriteLine(ip);
+        
+            if (ip.Trim() != "")
+            {
+                string val = lg.LoginL();
+                Console.WriteLine(val);
+                if(val.Trim() == "OK")
+                {
+                    p.lbldato.Text = ip;
+                    p.lbldato2.Text = "OK";
+                    p.Show();
+                    this.Close();
+                    
+                }
+               
+            }
+    
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            IniciarN();
+            IniciarN(txtUsuario.Text.Trim(), txtPass.Text.Trim());
         }
-        private void IniciarN()
+        private void IniciarN(string usuario, string clave)
         {
-            if(cbxRemember.Checked == true)
+            int r;
+            string resultado = consultas.ConsultaSimple("SELECT idUsuario FROM Usuario WHERE Usuario.UserName ='" + txtUsuario.Text.Trim() + "'");
+            p.lbldato.Text = resultado;
+            if (cbxRemember.Checked == true)
             {
-
+                
+                string val = lg.Login(usuario,clave);
+                if (val.Trim() == "OK")
+                {
+                    p.lbldato2.Text = "OK";
+                    p.Show();
+                    this.Close();
+                }
+              
             }
             else
             {
-               string val = lg.Login(txtUsuario.Text.Trim(), txtPass.Text.Trim());
+                
+                string val = lg.Login(txtUsuario.Text.Trim(), txtPass.Text.Trim());
                 if(val.Trim() == "OK")
                 {
+                    p.lbldato2.Text = "NO";
                     p.Show();
                     this.Close();
                     

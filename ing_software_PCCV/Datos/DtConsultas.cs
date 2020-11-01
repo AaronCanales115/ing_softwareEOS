@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace Datos
+{
+    public class DtConsultas
+    {
+        Conexion conexion = new Conexion();
+
+        public string CSimple(string sql)
+        {
+            string result = "";
+            try
+            {
+
+                SqlCommand cm = new SqlCommand(sql, conexion.conexion);
+                SqlDataAdapter DA = new SqlDataAdapter(cm);
+                DataTable dt = new DataTable();
+                DA.Fill(dt);
+                if (dt.Rows.Count > 0)
+                { 
+                    result = Convert.ToString(dt.Rows[0][0]);
+                }
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+    }
+}

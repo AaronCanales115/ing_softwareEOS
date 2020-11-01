@@ -13,6 +13,7 @@ namespace ing_software_PCCV
 {
     public partial class FrmPrincipal : Form
     {
+        DmLogin Lg = new DmLogin();
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -43,9 +44,17 @@ namespace ing_software_PCCV
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DmLogin log = new DmLogin();
-            log.CerrarSesion("1");
+            string dato = lbldato2.Text.Trim();
 
+             if(dato == "NO")
+              {
+                  Lg.CerrarSesion(lbldato.Text.Trim());
+              }
+              if(dato == "OK")
+              {
+                  Lg.MantenerSesion(lbldato.Text.Trim());
+              }
+           
             Application.Exit();
         }
 
@@ -57,6 +66,12 @@ namespace ing_software_PCCV
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Lg.CerrarSesion(lbldato.Text.Trim());
+            Application.Exit();
         }
     }
 }

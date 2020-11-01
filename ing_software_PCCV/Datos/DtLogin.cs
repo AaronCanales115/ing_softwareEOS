@@ -29,7 +29,7 @@ namespace Datos
 
 
                 return res.Value.ToString();
-                Console.WriteLine(res.Value.ToString()+ "La vaca");
+               // Console.WriteLine(res.Value.ToString()+ "La vaca");
             }
             catch (Exception ex)
             {
@@ -47,6 +47,41 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
            
+        }
+        public void MantenerSesion(int id)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SPMantenerSesion";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+
+        }
+
+        public string LoginL(string IP)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SPSesion";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@IpMaquina", IP);
+                res = comando.Parameters.AddWithValue("@Resultado", " ");
+                comando.Parameters["@Resultado"].Direction = ParameterDirection.Output;
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+
+                return res.Value.ToString();
+                // Console.WriteLine(res.Value.ToString()+ "La vaca");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex + "Eroror");
+                return "ERROR";
+            }
+
         }
     }
 }

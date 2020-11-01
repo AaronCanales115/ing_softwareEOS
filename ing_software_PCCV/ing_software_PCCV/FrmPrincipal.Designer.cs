@@ -37,6 +37,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lbldato = new System.Windows.Forms.Label();
+            this.lbldato2 = new System.Windows.Forms.Label();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +64,8 @@
             // 
             // inicioToolStripMenuItem
             // 
+            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
@@ -109,9 +115,9 @@
             this.label1.ForeColor = System.Drawing.Color.Salmon;
             this.label1.Location = new System.Drawing.Point(50, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 20);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Proyecto CCV User:";
+            this.label1.Text = "Proyecto CCV - ";
             // 
             // panel1
             // 
@@ -122,12 +128,54 @@
             this.panel1.Size = new System.Drawing.Size(1377, 7);
             this.panel1.TabIndex = 0;
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Roboto", 12F);
+            this.lblUser.ForeColor = System.Drawing.Color.Salmon;
+            this.lblUser.Location = new System.Drawing.Point(163, 18);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 20);
+            this.lblUser.TabIndex = 7;
+            // 
+            // lbldato
+            // 
+            this.lbldato.AutoSize = true;
+            this.lbldato.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            this.lbldato.Location = new System.Drawing.Point(1286, 4);
+            this.lbldato.Name = "lbldato";
+            this.lbldato.Size = new System.Drawing.Size(24, 7);
+            this.lbldato.TabIndex = 8;
+            this.lbldato.Text = "label2";
+            this.lbldato.Visible = false;
+            // 
+            // lbldato2
+            // 
+            this.lbldato2.AutoSize = true;
+            this.lbldato2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            this.lbldato2.Location = new System.Drawing.Point(1238, 4);
+            this.lbldato2.Name = "lbldato2";
+            this.lbldato2.Size = new System.Drawing.Size(24, 7);
+            this.lbldato2.TabIndex = 9;
+            this.lbldato2.Text = "label2";
+            this.lbldato2.Visible = false;
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lbldato2);
+            this.Controls.Add(this.lbldato);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -164,6 +212,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.Label lbldato;
+        public System.Windows.Forms.Label lbldato2;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
     }
 }
 

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="DtConsultas.cs" />
     <Compile Include="DtLogin.cs" />
     <Compile Include="DtProductos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
