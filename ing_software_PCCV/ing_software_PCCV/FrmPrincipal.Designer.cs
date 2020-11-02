@@ -47,7 +47,7 @@
             this.msMenu.AutoSize = false;
             this.msMenu.BackColor = System.Drawing.Color.White;
             this.msMenu.Dock = System.Windows.Forms.DockStyle.None;
-            this.msMenu.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.inventarioToolStripMenuItem});
@@ -61,13 +61,13 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 19);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(54, 19);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(90, 19);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(83, 19);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -97,11 +97,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label1.ForeColor = System.Drawing.Color.Tomato;
             this.label1.Location = new System.Drawing.Point(44, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 19);
+            this.label1.Size = new System.Drawing.Size(130, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "CCV Project User:";
             // 
@@ -120,7 +120,7 @@
             this.pContenedor.Location = new System.Drawing.Point(0, 73);
             this.pContenedor.Margin = new System.Windows.Forms.Padding(0);
             this.pContenedor.Name = "pContenedor";
-            this.pContenedor.Size = new System.Drawing.Size(1370, 583);
+            this.pContenedor.Size = new System.Drawing.Size(1370, 686);
             this.pContenedor.TabIndex = 5;
             // 
             // FrmPrincipal
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 665);
+            this.ClientSize = new System.Drawing.Size(1370, 768);
             this.Controls.Add(this.pContenedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);

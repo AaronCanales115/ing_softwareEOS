@@ -144,7 +144,7 @@
             this.gbMenu.Controls.Add(this.label3);
             this.gbMenu.Location = new System.Drawing.Point(973, 116);
             this.gbMenu.Name = "gbMenu";
-            this.gbMenu.Size = new System.Drawing.Size(328, 505);
+            this.gbMenu.Size = new System.Drawing.Size(328, 452);
             this.gbMenu.TabIndex = 0;
             this.gbMenu.TabStop = false;
             this.gbMenu.Text = "Actualizar Datos";
@@ -152,6 +152,15 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Calzado",
+            "Ropa de mujer",
+            "Ropa de hombre ",
+            "Ropa de niño",
+            "Ropa de niña ",
+            "Joyería ",
+            "Perfumes",
+            "Lencería "});
             this.comboBox1.Location = new System.Drawing.Point(31, 268);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 24);
@@ -188,10 +197,11 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(193, 23);
             this.txtStock.TabIndex = 12;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(129, 429);
+            this.btnModificar.Location = new System.Drawing.Point(129, 387);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 17;
@@ -213,6 +223,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(193, 23);
             this.txtPrecio.TabIndex = 10;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label5
             // 
@@ -225,7 +236,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(18, 361);
+            this.txtDescripcion.Location = new System.Drawing.Point(18, 332);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(293, 49);
             this.txtDescripcion.TabIndex = 8;
@@ -234,7 +245,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 324);
+            this.label4.Location = new System.Drawing.Point(122, 312);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 7;
@@ -260,7 +271,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Salmon;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(1022, 652);
+            this.btnEliminar.Location = new System.Drawing.Point(1023, 611);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(229, 27);
             this.btnEliminar.TabIndex = 3;
@@ -277,6 +288,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(191, 27);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.Text = "Buscar";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
             this.txtBuscar.MouseEnter += new System.EventHandler(this.txtBuscar_MouseEnter);
             this.txtBuscar.MouseLeave += new System.EventHandler(this.txtBuscar_MouseLeave);
             // 
