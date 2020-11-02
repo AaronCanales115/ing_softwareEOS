@@ -34,5 +34,21 @@ namespace Datos
                 return ex.ToString();
             }
         }
+
+        public DataTable Consulta(string sql)
+        {
+           
+            SqlDataReader leer;
+           DataTable tabla = new DataTable();
+          SqlCommand comando = new SqlCommand();
+
+            tabla.Clear();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = sql;
+            comando.CommandType = CommandType.Text;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            return tabla;
+        }
     }
 }
