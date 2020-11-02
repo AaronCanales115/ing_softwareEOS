@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buscar.cs" />
+    <Compile Include="DmArchivo.cs" />
+    <Compile Include="DmConsultas.cs" />
+    <Compile Include="DmLogin.cs" />
+    <Compile Include="DmObtenerIP.cs" />
     <Compile Include="DmProductos.cs" />
     <Compile Include="DConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

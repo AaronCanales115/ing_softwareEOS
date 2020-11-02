@@ -28,12 +28,12 @@ namespace ing_software_PCCV.Forms
 
         private void txtBuscar_MouseEnter(object sender, EventArgs e)
         {
-            //txtBuscar.Text = "";
+            txtBuscar.Text = "";
         }
 
         private void txtBuscar_MouseLeave(object sender, EventArgs e)
         {
-            //txtBuscar.Text = "Buscar";
+            txtBuscar.Text = "Buscar";
             
         }
 
@@ -112,23 +112,12 @@ namespace ing_software_PCCV.Forms
         private void txtBuscar_TextChanged_1(object sender, EventArgs e)
         {
             Buscar b = new Buscar();
-            b.Filtrar(dgvMostrar, this.txtBuscar.Text.Trim());
+            b.Filtrar(dgvMostrar,this.txtBuscar.Text.Trim());
         }
 
-        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
 
-        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
     }
 }

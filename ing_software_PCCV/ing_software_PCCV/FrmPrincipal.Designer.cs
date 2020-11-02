@@ -33,10 +33,14 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.pContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pContenedor = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lbldato = new System.Windows.Forms.Label();
+            this.lbldato2 = new System.Windows.Forms.Label();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,27 +51,29 @@
             this.msMenu.AutoSize = false;
             this.msMenu.BackColor = System.Drawing.Color.White;
             this.msMenu.Dock = System.Windows.Forms.DockStyle.None;
-            this.msMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msMenu.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.inventarioToolStripMenuItem});
-            this.msMenu.Location = new System.Drawing.Point(0, 36);
+            this.msMenu.Location = new System.Drawing.Point(0, 44);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.msMenu.Size = new System.Drawing.Size(1452, 23);
+            this.msMenu.Size = new System.Drawing.Size(1452, 26);
             this.msMenu.TabIndex = 0;
             this.msMenu.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
+            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(54, 19);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(59, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(83, 19);
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
@@ -75,7 +81,7 @@
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1342, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(1338, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 27);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,65 +89,107 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // pContenedor
+            // 
+            this.pContenedor.BackColor = System.Drawing.Color.White;
+            this.pContenedor.Location = new System.Drawing.Point(0, 83);
+            this.pContenedor.Margin = new System.Windows.Forms.Padding(0);
+            this.pContenedor.Name = "pContenedor";
+            this.pContenedor.Size = new System.Drawing.Size(1370, 788);
+            this.pContenedor.TabIndex = 5;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label1.ForeColor = System.Drawing.Color.Tomato;
-            this.label1.Location = new System.Drawing.Point(44, 9);
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label1.ForeColor = System.Drawing.Color.Salmon;
+            this.label1.Location = new System.Drawing.Point(50, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "CCV Project User:";
+            this.label1.Size = new System.Drawing.Size(121, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Proyecto CCV - ";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(0, 62);
+            this.panel1.BackColor = System.Drawing.Color.Salmon;
+            this.panel1.Location = new System.Drawing.Point(0, 75);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 10);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(1377, 7);
+            this.panel1.TabIndex = 0;
             // 
-            // pContenedor
+            // lblUser
             // 
-            this.pContenedor.BackColor = System.Drawing.Color.White;
-            this.pContenedor.Location = new System.Drawing.Point(0, 73);
-            this.pContenedor.Margin = new System.Windows.Forms.Padding(0);
-            this.pContenedor.Name = "pContenedor";
-            this.pContenedor.Size = new System.Drawing.Size(1370, 686);
-            this.pContenedor.TabIndex = 5;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Roboto", 12F);
+            this.lblUser.ForeColor = System.Drawing.Color.Salmon;
+            this.lblUser.Location = new System.Drawing.Point(163, 18);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 20);
+            this.lblUser.TabIndex = 7;
+            // 
+            // lbldato
+            // 
+            this.lbldato.AutoSize = true;
+            this.lbldato.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            this.lbldato.Location = new System.Drawing.Point(1286, 4);
+            this.lbldato.Name = "lbldato";
+            this.lbldato.Size = new System.Drawing.Size(24, 7);
+            this.lbldato.TabIndex = 8;
+            this.lbldato.Text = "label2";
+            this.lbldato.Visible = false;
+            // 
+            // lbldato2
+            // 
+            this.lbldato2.AutoSize = true;
+            this.lbldato2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            this.lbldato2.Location = new System.Drawing.Point(1238, 4);
+            this.lbldato2.Name = "lbldato2";
+            this.lbldato2.Size = new System.Drawing.Size(24, 7);
+            this.lbldato2.TabIndex = 9;
+            this.lbldato2.Text = "label2";
+            this.lbldato2.Visible = false;
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 768);
-            this.Controls.Add(this.pContenedor);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lbldato2);
+            this.Controls.Add(this.lbldato);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pContenedor);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.msMenu);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.msMenu;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1364, 665);
             this.Name = "FrmPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
@@ -160,10 +208,14 @@
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Panel pContenedor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pContenedor;
+        private System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.Label lbldato;
+        public System.Windows.Forms.Label lbldato2;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
     }
 }
 
