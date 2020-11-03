@@ -105,13 +105,18 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="imagenes\1499345621-contact_85338.png" />
     <Content Include="imagenes\4115230-cancel-close-cross-delete_114048.png" />
     <Content Include="imagenes\c-temperature-folded-icon_30475.png" />
     <Content Include="imagenes\Close Window_ 2 48px.png" />
+    <Content Include="imagenes\imq.PNG" />
+    <Content Include="imagenes\Logo2.PNG" />
     <Content Include="imagenes\Maximize Window_2 48px.png" />
+    <Content Include="imagenes\mbrilock_99595.png" />
     <Content Include="imagenes\Minimize Window_2 48px.png" />
     <Content Include="imagenes\Restore Window 2_48px.png" />
     <Content Include="imagenes\user_person_13936.png" />
+    <Content Include="imagenes\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
