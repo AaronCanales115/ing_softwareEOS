@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 namespace Datos
 {
     public class DtProductos
@@ -15,17 +15,21 @@ namespace Datos
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
-        public DataTable mostrar()
+        public void mostrarProductos(DataGridView data, int Numero)
         {
-            tabla.Clear();
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SELECT idProducto as ID ,Producto.Nombre ,Producto.Descripcion ,Producto.Precio ,Producto.Stock ,Producto.Talla,EstadoProducto.Estado FROM Producto,EstadoProducto WHERE Producto.Estado = EstadoProducto.idEstadoProducto";
-            comando.CommandType = CommandType.Text;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            return tabla;
+            
+            DataTable tab = new DataTable();
+            SqlCommand sql = new SqlCommand("SPMostrarProductos", conexion.AbrirConexion());
+            sql.CommandType = CommandType.StoredProcedure;
+            sql.Parameters.AddWithValue("@Valor", Numero);
+            sql.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(sql);
+            da.Fill(tab);
+            data.DataSource = tab;
+            
            
         }
+      
 
         public void Editar(int id, string nombre, string descripcion, decimal precio, int stock, string talla, int categoria, int estado, int usuario, string resultado)
         {

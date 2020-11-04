@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using System.Data;
-
+using System.Windows.Forms;
 namespace Controlador
 {
     public class DmProductos
@@ -13,11 +13,14 @@ namespace Controlador
 
         private DtProductos oDt = new DtProductos();
 
-        public DataTable MostrarProductos()
+        public void MostrarProductos(DataGridView dgv, string numero)
         {
-            DataTable tabla = new DataTable();
-            tabla = oDt.mostrar();
-            return tabla;
+           
+            int valor = Convert.ToInt16(numero);
+                oDt.mostrarProductos(dgv, valor);
+                dgv.Columns["ID"].Visible = false;
+        
+         
         }
 
         public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla, string categoria, string estado, string usuario, string resultado)

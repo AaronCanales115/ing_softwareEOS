@@ -11,7 +11,7 @@ namespace Controlador
 {
     public class Buscar
     {
-       public void Filtrar(DataGridView data, string busqueda)
+       public void Filtrar(DataGridView data, string busqueda,int numero)
         {
             Conexion con = new Conexion();
             try
@@ -19,7 +19,7 @@ namespace Controlador
                 SqlCommand sql = new SqlCommand("SPFiltroBusqueda",con.AbrirConexion());
                 sql.CommandType = CommandType.StoredProcedure;
                 sql.Parameters.Add("@Filtro", SqlDbType.NVarChar, 100).Value = busqueda;
-
+                sql.Parameters.AddWithValue("@Numero",numero);
                 sql.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(sql);
@@ -38,21 +38,4 @@ namespace Controlador
         }
     }
 }
-/*
-CREATE PROCEDURE SPFiltroBusqueda 
-@Filtro as nvarchar(100)
-AS
-BEGIN
-	 SELECT idProducto as ID
-       ,Producto.Nombre
-	   ,Producto.Descripcion
-	   ,Producto.Precio
-	   ,Producto.Stock
-	   ,Producto.Talla
-	   ,Categoria.Nombre
-	   ,EstadoProducto.Estado
-       FROM Producto, Categoria,EstadoProducto
-	   WHERE Producto.idCategoria = Categoria.idCategoria AND Producto.Estado = EstadoProducto.idEstadoProducto AND Producto.Nombre LIKE @Filtro + '%'
-END
-GO
-*/
+
