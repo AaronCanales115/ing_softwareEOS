@@ -85,5 +85,15 @@ namespace ing_software_PCCV
            Lg.CerrarSesion(lbldato.Text.Trim());
             Application.Exit();
         }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void existenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

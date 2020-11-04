@@ -26,17 +26,6 @@ namespace ing_software_PCCV.Forms
             this.Close();
         }
 
-        private void txtBuscar_MouseEnter(object sender, EventArgs e)
-        {
-            txtBuscar.Text = "";
-        }
-
-        private void txtBuscar_MouseLeave(object sender, EventArgs e)
-        {
-            txtBuscar.Text = "Buscar";
-            
-        }
-
         private void btnModificar_Click(object sender, EventArgs e)
         {
             
@@ -118,6 +107,22 @@ namespace ing_software_PCCV.Forms
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar")
+            {
+                txtBuscar.Text = "";
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Buscar";
+            }
         }
     }
 }

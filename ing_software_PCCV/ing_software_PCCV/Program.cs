@@ -16,9 +16,12 @@ namespace ing_software_PCCV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Login log = new Login();
-            log.FormClosed += MainForm_Closed;
-            log.Show();
+            //Login log = new Login();
+            //log.FormClosed += MainForm_Closed;
+            //log.Show();
+            FrmPrincipal frmP = new FrmPrincipal();
+            frmP.FormClosed += MainForm_Closed;
+            frmP.Show();
             Application.Run();
          
         }
