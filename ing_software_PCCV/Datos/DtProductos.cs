@@ -59,7 +59,7 @@ namespace Datos
             comando.Parameters.Clear();
         }
 
-        public void agregarProductoNuevo(int usuario, string nombre, string descripcion, decimal precio, string talla, int categoria, int estado, string NFactura, int cantidad, decimal total, int idProveedor, string resultado)
+        public void agregarProductoNuevo(int usuario, string nombre, string descripcion, decimal precio, string talla, int categoria, int estado, string NFactura, int cantidad, decimal total, int idProveedor)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SPAgregarCompraProducto";
@@ -75,7 +75,6 @@ namespace Datos
             comando.Parameters.AddWithValue("@Cantidad", cantidad);
             comando.Parameters.AddWithValue("@total", total);
             comando.Parameters.AddWithValue("@idProveedor", idProveedor);
-            comando.Parameters.AddWithValue("@Resultado", resultado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }

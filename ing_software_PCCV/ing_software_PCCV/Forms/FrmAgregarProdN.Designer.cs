@@ -87,6 +87,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtNFacturaV = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtNFacturaC = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtNFacturaB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.gbVestimenta.SuspendLayout();
@@ -122,7 +128,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(456, 10);
+            this.label1.Location = new System.Drawing.Point(601, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 24);
             this.label1.TabIndex = 0;
@@ -137,6 +143,7 @@
             this.gbVestimenta.Controls.Add(this.txtTalla);
             this.gbVestimenta.Controls.Add(this.txtCantidadV);
             this.gbVestimenta.Controls.Add(this.txtPrecioV);
+            this.gbVestimenta.Controls.Add(this.txtNFacturaV);
             this.gbVestimenta.Controls.Add(this.txtNombreV);
             this.gbVestimenta.Controls.Add(this.label3);
             this.gbVestimenta.Controls.Add(this.label8);
@@ -144,6 +151,7 @@
             this.gbVestimenta.Controls.Add(this.label6);
             this.gbVestimenta.Controls.Add(this.label5);
             this.gbVestimenta.Controls.Add(this.label4);
+            this.gbVestimenta.Controls.Add(this.label21);
             this.gbVestimenta.Controls.Add(this.label2);
             this.gbVestimenta.Location = new System.Drawing.Point(32, 134);
             this.gbVestimenta.Name = "gbVestimenta";
@@ -381,6 +389,7 @@
             this.gbCalzado.Controls.Add(this.txtTallaC);
             this.gbCalzado.Controls.Add(this.txtCantidadC);
             this.gbCalzado.Controls.Add(this.txtPrecioC);
+            this.gbCalzado.Controls.Add(this.txtNFacturaC);
             this.gbCalzado.Controls.Add(this.txtNombreC);
             this.gbCalzado.Controls.Add(this.label13);
             this.gbCalzado.Controls.Add(this.label14);
@@ -388,6 +397,7 @@
             this.gbCalzado.Controls.Add(this.label16);
             this.gbCalzado.Controls.Add(this.label17);
             this.gbCalzado.Controls.Add(this.label18);
+            this.gbCalzado.Controls.Add(this.label27);
             this.gbCalzado.Controls.Add(this.label19);
             this.gbCalzado.Location = new System.Drawing.Point(32, 134);
             this.gbCalzado.Name = "gbCalzado";
@@ -532,12 +542,14 @@
             this.gbBisuteria.Controls.Add(this.txtDescripcionB);
             this.gbBisuteria.Controls.Add(this.txtCantidadB);
             this.gbBisuteria.Controls.Add(this.txtPrecioB);
+            this.gbBisuteria.Controls.Add(this.txtNFacturaB);
             this.gbBisuteria.Controls.Add(this.txtNombreB);
             this.gbBisuteria.Controls.Add(this.label20);
             this.gbBisuteria.Controls.Add(this.label22);
             this.gbBisuteria.Controls.Add(this.label23);
             this.gbBisuteria.Controls.Add(this.label24);
             this.gbBisuteria.Controls.Add(this.label25);
+            this.gbBisuteria.Controls.Add(this.label28);
             this.gbBisuteria.Controls.Add(this.label26);
             this.gbBisuteria.Location = new System.Drawing.Point(32, 134);
             this.gbBisuteria.Name = "gbBisuteria";
@@ -656,21 +668,69 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "Nombre:";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(287, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(80, 17);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "N° Factura:";
+            // 
+            // txtNFacturaV
+            // 
+            this.txtNFacturaV.Location = new System.Drawing.Point(373, 27);
+            this.txtNFacturaV.Name = "txtNFacturaV";
+            this.txtNFacturaV.Size = new System.Drawing.Size(161, 23);
+            this.txtNFacturaV.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(287, 30);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(80, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "N° Factura:";
+            // 
+            // txtNFacturaC
+            // 
+            this.txtNFacturaC.Location = new System.Drawing.Point(373, 27);
+            this.txtNFacturaC.Name = "txtNFacturaC";
+            this.txtNFacturaC.Size = new System.Drawing.Size(161, 23);
+            this.txtNFacturaC.TabIndex = 1;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(287, 30);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(80, 17);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "N° Factura:";
+            // 
+            // txtNFacturaB
+            // 
+            this.txtNFacturaB.Location = new System.Drawing.Point(373, 27);
+            this.txtNFacturaB.Name = "txtNFacturaB";
+            this.txtNFacturaB.Size = new System.Drawing.Size(161, 23);
+            this.txtNFacturaB.TabIndex = 1;
+            // 
             // FrmAgregarProdN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.gbBisuteria);
             this.Controls.Add(this.lblidUsuario);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rbtnBisuteria);
             this.Controls.Add(this.rbtnCalzado);
             this.Controls.Add(this.rbtnVestimenta);
-            this.Controls.Add(this.gbVestimenta);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbCalzado);
-            this.Controls.Add(this.gbBisuteria);
+            this.Controls.Add(this.gbVestimenta);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAgregarProdN";
@@ -752,5 +812,11 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtNFacturaV;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtNFacturaC;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtNFacturaB;
+        private System.Windows.Forms.Label label28;
     }
 }
