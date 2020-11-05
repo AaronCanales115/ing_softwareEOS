@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Buscar.cs" />
     <Compile Include="DmArchivo.cs" />
+    <Compile Include="DmComprasE.cs" />
     <Compile Include="DmConsultas.cs" />
     <Compile Include="DmLogin.cs" />
     <Compile Include="DmObtenerIP.cs" />

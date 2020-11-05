@@ -30,5 +30,11 @@ namespace Controlador
             }
             return arr;
         }
+        public DataTable ConsultaTab (string sql)
+        {
+            DataTable tab = new DataTable();
+            tab = c.Consulta(sql);
+            return tab;
+        }
     }
 }
