@@ -88,12 +88,12 @@ namespace ing_software_PCCV
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            abrirForm(new Forms.FrmAgregarProdN());
         }
 
         private void existenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            abrirForm(new Forms.FrmAgregarProdE());
         }
     }
 }
