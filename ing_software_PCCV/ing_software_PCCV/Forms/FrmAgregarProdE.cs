@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
+using System.Collections;
 
 namespace ing_software_PCCV.Forms
 {
@@ -19,7 +20,9 @@ namespace ing_software_PCCV.Forms
         }
         private DmProductos ODm = new DmProductos();
         DmConsultas c = new DmConsultas();
-
+        ArrayList arr1 = new ArrayList();
+        ArrayList arr2 = new ArrayList();
+        DmComprasE ce = new DmComprasE();
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
             if (txtBuscar.Text == "Buscar")
@@ -119,7 +122,7 @@ namespace ing_software_PCCV.Forms
                bool va = validarNombre(nombre);
                 if (va)
                 {
-                    agregar(nombre, Convert.ToDecimal(precio.Trim()), Convert.ToInt32(cantidad));
+                    agregar(id,nombre, Convert.ToDecimal(precio.Trim()), Convert.ToInt32(cantidad));
                 }
                 else
                 {
@@ -132,7 +135,7 @@ namespace ing_software_PCCV.Forms
                 MessageBox.Show("Seleccione una fila");
             }
         }
-        private void agregar(string Nombre,decimal Precio, int existencia)
+        private void agregar(string id,string Nombre,decimal Precio, int existencia)
         {
             
             DataGridViewRow fila = new DataGridViewRow();
@@ -143,7 +146,7 @@ namespace ing_software_PCCV.Forms
             
             dgvLista.Rows.Add(fila);
             txtNPiezas.Text = Convert.ToString(dgvLista.Rows.Count);
-
+            arr1.Add(id);
            
 
         }
@@ -231,7 +234,31 @@ namespace ing_software_PCCV.Forms
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            
+            string cantidad;
+            int a = dgvLista.Rows.Count;
+            string nf = txtFactura.Text;
+            if(nf.Trim() == "")
+            {
+                MessageBox.Show("Error, Ingrese un número de factura", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                for (int i = 0; i < a; i++)
+                {
+
+                    string pro = cbxProveedor.SelectedValue.ToString();
+                    cantidad = dgvLista.Rows[i].Cells[3].Value.ToString();
+                    string id = arr1[i].ToString();
+                    string tot = arr2[i].ToString();
+                    ce.GuardarCompraE("1",nf,cantidad,tot,pro,id);
+                    
+                    Console.WriteLine(nf + " " + pro + " " + cantidad + " " + id + " " + tot);
+                }
+                MessageBox.Show("Compra realizada con exito", "COMPRAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                this.Show();
+            }
+           
         }
 
         private void dgvLista_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -248,6 +275,7 @@ namespace ing_software_PCCV.Forms
             decimal pr = Convert.ToDecimal(precio);
             int ca = Convert.ToInt32(cant);
             int exi = Convert.ToInt32(ex);
+
             if (ca > exi)
             {
                 MessageBox.Show("Error, La cantidad es mayor que la exitencia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -269,6 +297,7 @@ namespace ing_software_PCCV.Forms
                     txtSubTotal.Text = ab + "";
                     lblTotal.Text = ab + "";
                 }
+                arr2.Add(a);
                
 
             }
