@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
 
 namespace ing_software_PCCV.Forms
 {
@@ -16,6 +17,8 @@ namespace ing_software_PCCV.Forms
         {
             InitializeComponent();
         }
+        private DmProductos ODm = new DmProductos();
+
 
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
@@ -31,6 +34,18 @@ namespace ing_software_PCCV.Forms
             {
                 txtBuscar.Text = "Buscar";
             }
+        }
+
+        private void mostrarProductos(string valor)
+        {
+
+            ODm.MostrarProductos(dgvMostrar, valor);
+
+        }
+
+        private void FrmAgregarProdE_Load(object sender, EventArgs e)
+        {
+            mostrarProductos("1");
         }
     }
 }

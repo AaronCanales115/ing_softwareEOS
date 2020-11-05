@@ -52,6 +52,12 @@
     <Compile Include="Forms\FrmAgregarProdE.Designer.cs">
       <DependentUpon>FrmAgregarProdE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmAgregarProdN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAgregarProdN.Designer.cs">
+      <DependentUpon>FrmAgregarProdN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmAgregarProdE.resx">
       <DependentUpon>FrmAgregarProdE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAgregarProdN.resx">
+      <DependentUpon>FrmAgregarProdN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
