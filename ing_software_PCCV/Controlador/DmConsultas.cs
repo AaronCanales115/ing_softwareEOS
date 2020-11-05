@@ -36,5 +36,9 @@ namespace Controlador
             tab = c.Consulta(sql);
             return tab;
         }
+        public void Insertar(string sql)
+        {
+            c.Insertar(sql);
+        }
     }
 }

@@ -237,27 +237,40 @@ namespace ing_software_PCCV.Forms
             string cantidad;
             int a = dgvLista.Rows.Count;
             string nf = txtFactura.Text;
-            if(nf.Trim() == "")
+            if (nf.Trim() == "")
             {
                 MessageBox.Show("Error, Ingrese un número de factura", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                for (int i = 0; i < a; i++)
-                {
+              //  if (ValidarVacio())
+              //  {
+                    for (int i = 0; i < a; i++)
+                    {
 
-                    string pro = cbxProveedor.SelectedValue.ToString();
-                    cantidad = dgvLista.Rows[i].Cells[3].Value.ToString();
-                    string id = arr1[i].ToString();
-                    string tot = arr2[i].ToString();
-                    ce.GuardarCompraE("1",nf,cantidad,tot,pro,id);
-                    
-                    Console.WriteLine(nf + " " + pro + " " + cantidad + " " + id + " " + tot);
+                        string pro = cbxProveedor.SelectedValue.ToString();
+                        cantidad = dgvLista.Rows[i].Cells[3].Value.ToString();
+                        string id = arr1[i].ToString();
+                        string tot = arr2[i].ToString();
+
+
+                        ce.GuardarCompraE("1", nf, cantidad, tot, pro, id);
+
+                        Console.WriteLine(nf + " " + pro + " " + cantidad + " " + id + " " + tot);
+                    }
+                    int nfa = Convert.ToInt32(nf);
+                    decimal al3 = Convert.ToDecimal(lblDesc.Text.Trim());
+                    if (txtDescuento.Text.Trim() != "")
+                    {
+
+                        c.Insertar("insert into Descuento (Descuento.NFactura,Descuento.Descuento,Descuento.tipo) VALUES ('" + nfa + "','" + al3 + "',1)");
+                    }
+
+                    MessageBox.Show("Compra realizada con exito", "COMPRAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    this.Show();
                 }
-                MessageBox.Show("Compra realizada con exito", "COMPRAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                this.Show();
-            }
+           // }
            
         }
 
@@ -302,7 +315,40 @@ namespace ing_software_PCCV.Forms
 
             }
         }
-           
+
+        private void txtDescuento_Leave(object sender, EventArgs e)
+        {
+            decimal val = Convert.ToDecimal(txtDescuento.Text.Trim());
+            if(val > 0)
+            {
+                decimal val1 = val / 100;
+                decimal sbtotal = Convert.ToDecimal(lblTotal.Text.Trim()) * (val1);
+                decimal total = sbtotal- val;
+                lblDesc.Text = sbtotal+"";
+                lblTotal.Text = total+"";
+            }
+             
+        }
+        private bool ValidarVacio()
+        {
+            string cantidad ="";
+            int a = dgvLista.Rows.Count;
+            for (int i = 0; i < a; i++)
+            {
+
+                string pro = cbxProveedor.SelectedValue.ToString();
+
+                cantidad = dgvLista.Rows[i].Cells[3].Value.ToString();
+                if(cantidad == "")
+                {
+                    return false;
+                    i = a;
+                    MessageBox.Show("Error, uno de los campos esta vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
+            }
+            return true;
+        }
     }
        
     

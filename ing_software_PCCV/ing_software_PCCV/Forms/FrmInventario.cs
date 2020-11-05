@@ -180,5 +180,39 @@ namespace ing_software_PCCV.Forms
         {
             lblUs.Text = v;
         }
+        private void ValidarSoloNumero(KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarSoloNumero(e);
+        }
+
+        private void txtTalla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTalla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarSoloNumero(e);
+        }
     }
 }

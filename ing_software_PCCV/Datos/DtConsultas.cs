@@ -50,5 +50,13 @@ namespace Datos
             tabla.Load(leer);
             return tabla;
         }
+        public void Insertar(string sql)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = sql;
+            comando.CommandType = CommandType.Text;
+            comando.ExecuteNonQuery();
+        }
     }
 }

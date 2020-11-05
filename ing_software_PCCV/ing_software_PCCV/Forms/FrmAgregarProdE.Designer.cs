@@ -65,6 +65,7 @@
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtNPiezas = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
@@ -427,6 +428,7 @@
             this.txtDescuento.Size = new System.Drawing.Size(129, 23);
             this.txtDescuento.TabIndex = 11;
             this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
+            this.txtDescuento.Leave += new System.EventHandler(this.txtDescuento_Leave);
             // 
             // txtSubTotal
             // 
@@ -455,12 +457,22 @@
             this.lblValor.Text = "1";
             this.lblValor.Visible = false;
             // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(861, 666);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(0, 17);
+            this.lblDesc.TabIndex = 17;
+            this.lblDesc.Visible = false;
+            // 
             // FrmAgregarProdE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -525,5 +537,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Existencias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.Label lblDesc;
     }
 }
