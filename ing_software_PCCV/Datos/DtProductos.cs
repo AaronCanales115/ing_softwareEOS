@@ -58,5 +58,25 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
+
+        public void agregarProductoNuevo(int usuario, string nombre, string descripcion, decimal precio, string talla, int categoria, int estado, string NFactura, int cantidad, decimal total, int idProveedor)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SPAgregarCompraProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Usuario", usuario);
+            comando.Parameters.AddWithValue("@Nombre", nombre);
+            comando.Parameters.AddWithValue("@Descripcion", descripcion);
+            comando.Parameters.AddWithValue("@Precio", precio);
+            comando.Parameters.AddWithValue("@Talla", talla);
+            comando.Parameters.AddWithValue("@Categoria", categoria);
+            comando.Parameters.AddWithValue("@Estado", estado);
+            comando.Parameters.AddWithValue("@NFactura", NFactura);
+            comando.Parameters.AddWithValue("@Cantidad", cantidad);
+            comando.Parameters.AddWithValue("@total", total);
+            comando.Parameters.AddWithValue("@idProveedor", idProveedor);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+        }
     }
 }
