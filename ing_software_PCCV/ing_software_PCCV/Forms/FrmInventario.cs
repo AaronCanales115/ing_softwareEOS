@@ -13,14 +13,17 @@ namespace ing_software_PCCV.Forms
 {
     public partial class FrmInventario : Form
     {
+       
+       
         public FrmInventario()
         {
             InitializeComponent();
         }
-
+        DmConsultas c = new DmConsultas();
         private DmProductos ODm = new DmProductos();
+        DmObtenerIP IP = new DmObtenerIP();
         string idProducto;
-
+        FrmPrincipal p = new FrmPrincipal();
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,7 +43,11 @@ namespace ing_software_PCCV.Forms
 
         private void FrmInventario_Load(object sender, EventArgs e)
         {
+            string IPM = IP.ObtenerMac();
+            string ip = c.ConsultaSimple("SELECT IpMaquina.idUsuario FROM IpMaquina WHERE ipMaquina ='" + IPM.Trim() + "'");
+             lblUs.Text = ip;
             mostrarProductos("1");
+           
         }
 
         
@@ -100,18 +107,16 @@ namespace ing_software_PCCV.Forms
             string precio = txtPrecio.Text;
             string stock = txtStock.Text;
             string talla = txtTalla.Text;
-            string categoria = "1";
-            string usuario = "1";
+            string usuario = lblUs.Text.Trim();
             string estado = "1";
-            string resultado = "da";
-            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla, categoria, estado, usuario, resultado);
+            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla,estado, usuario);
             mostrarProductos(lblValor.Text.Trim());
             MessageBox.Show("Producto modificado","Modificar",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string usuario = "1";
+            string usuario = lblUs.Text.Trim();
             string resultado = "1";
             string id = dgvMostrar.CurrentRow.Cells["ID"].Value.ToString();
             ODm.eliminar(id, usuario, resultado);
@@ -170,6 +175,10 @@ namespace ing_software_PCCV.Forms
             txtBuscar.Text = "";
             mostrarProductos("9");
 
+        }
+        public void label(string v)
+        {
+            lblUs.Text = v;
         }
     }
 }

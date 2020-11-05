@@ -58,7 +58,6 @@ namespace Controlador
             {
 
                 return "OK";
-                Console.WriteLine("Inicio Sesion");
             }
             else
             {

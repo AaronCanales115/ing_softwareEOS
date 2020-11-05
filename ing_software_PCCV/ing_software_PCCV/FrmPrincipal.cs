@@ -43,6 +43,7 @@ namespace ing_software_PCCV
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             abrirForm(new Forms.FrmInventario());
+           
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace ing_software_PCCV
             v3 = arr[2].ToString();
             lblUser.Text = v + " " + v2 + " - " + v3;
             //lblUser.Text = v;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

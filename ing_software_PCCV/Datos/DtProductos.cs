@@ -11,7 +11,6 @@ namespace Datos
     public class DtProductos
     {
         private Conexion conexion = new Conexion();
-        SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
@@ -31,7 +30,7 @@ namespace Datos
         }
       
 
-        public void Editar(int id, string nombre, string descripcion, decimal precio, int stock, string talla, int categoria, int estado, int usuario, string resultado)
+        public void Editar(int id, string nombre, string descripcion, decimal precio, int stock, string talla,int estado, int usuario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SPActualizarProducto";
@@ -42,10 +41,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@Precio", precio);
             comando.Parameters.AddWithValue("@Stock", stock);
             comando.Parameters.AddWithValue("@Talla", talla);
-            comando.Parameters.AddWithValue("@Categoria", categoria);
             comando.Parameters.AddWithValue("@Estado", estado);
             comando.Parameters.AddWithValue("@Usuario", usuario);
-            comando.Parameters.AddWithValue("@Resultado", resultado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
