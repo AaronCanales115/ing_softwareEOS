@@ -52,7 +52,6 @@ namespace ing_software_PCCV
         }
         private void IniciarN(string usuario, string clave)
         {
-            int r;
             string resultado = consultas.ConsultaSimple("SELECT idUsuario FROM Usuario WHERE Usuario.UserName ='" + txtUsuario.Text.Trim() + "'");
             p.lbldato.Text = resultado;
             if (cbxRemember.Checked == true)

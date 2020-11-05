@@ -33,6 +33,9 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compraDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.existenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,9 +44,6 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.lbldato = new System.Windows.Forms.Label();
             this.lbldato2 = new System.Windows.Forms.Label();
-            this.compraDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.existenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +87,29 @@
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(83, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
             this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
+            // 
+            // compraDeProductosToolStripMenuItem
+            // 
+            this.compraDeProductosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.existenteToolStripMenuItem});
+            this.compraDeProductosToolStripMenuItem.Name = "compraDeProductosToolStripMenuItem";
+            this.compraDeProductosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.compraDeProductosToolStripMenuItem.Text = "Compra de productos";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
+            // 
+            // existenteToolStripMenuItem
+            // 
+            this.existenteToolStripMenuItem.Name = "existenteToolStripMenuItem";
+            this.existenteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.existenteToolStripMenuItem.Text = "Existente";
+            this.existenteToolStripMenuItem.Click += new System.EventHandler(this.existenteToolStripMenuItem_Click);
             // 
             // btnCerrar
             // 
@@ -153,46 +176,23 @@
             // 
             this.lbldato.AutoSize = true;
             this.lbldato.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
-            this.lbldato.Location = new System.Drawing.Point(1286, 4);
+            this.lbldato.Location = new System.Drawing.Point(1044, 4);
             this.lbldato.Name = "lbldato";
-            this.lbldato.Size = new System.Drawing.Size(24, 7);
+            this.lbldato.Size = new System.Drawing.Size(20, 7);
             this.lbldato.TabIndex = 8;
-            this.lbldato.Text = "label2";
+            this.lbldato.Text = "label";
             this.lbldato.Visible = false;
             // 
             // lbldato2
             // 
             this.lbldato2.AutoSize = true;
             this.lbldato2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
-            this.lbldato2.Location = new System.Drawing.Point(1238, 4);
+            this.lbldato2.Location = new System.Drawing.Point(1245, 4);
             this.lbldato2.Name = "lbldato2";
-            this.lbldato2.Size = new System.Drawing.Size(24, 7);
+            this.lbldato2.Size = new System.Drawing.Size(20, 7);
             this.lbldato2.TabIndex = 9;
-            this.lbldato2.Text = "label2";
+            this.lbldato2.Text = "Lave";
             this.lbldato2.Visible = false;
-            // 
-            // compraDeProductosToolStripMenuItem
-            // 
-            this.compraDeProductosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem,
-            this.existenteToolStripMenuItem});
-            this.compraDeProductosToolStripMenuItem.Name = "compraDeProductosToolStripMenuItem";
-            this.compraDeProductosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.compraDeProductosToolStripMenuItem.Text = "Compra de productos";
-            // 
-            // nuevoToolStripMenuItem
-            // 
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.nuevoToolStripMenuItem.Text = "Nuevo";
-            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
-            // 
-            // existenteToolStripMenuItem
-            // 
-            this.existenteToolStripMenuItem.Name = "existenteToolStripMenuItem";
-            this.existenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.existenteToolStripMenuItem.Text = "Existente";
-            this.existenteToolStripMenuItem.Click += new System.EventHandler(this.existenteToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -201,8 +201,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1370, 760);
             this.ControlBox = false;
-            this.Controls.Add(this.lbldato2);
             this.Controls.Add(this.lbldato);
+            this.Controls.Add(this.lbldato2);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
