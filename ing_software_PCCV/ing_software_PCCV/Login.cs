@@ -40,6 +40,9 @@ namespace ing_software_PCCV
                     p.Show();
                     this.Close();
                     
+                }else if(val.Trim() == "ERROR")
+                {
+                    MessageBox.Show("Sesión Cerrada, se inicio la sesión en otro dispositivo","Sesión Cerrada Automáticamente",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                
             }
@@ -90,6 +93,22 @@ namespace ing_software_PCCV
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if((int)e.KeyChar == (int)Keys.Enter)
+            {
+                IniciarN(txtUsuario.Text.Trim(), txtPass.Text.Trim());
+            }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                txtPass.Focus();
+            }
         }
     }
 }
