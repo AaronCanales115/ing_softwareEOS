@@ -73,6 +73,10 @@ namespace ing_software_PCCV
             v2 = arr[1].ToString();
             v3 = arr[2].ToString();
             lblUser.Text = v + " " + v2 + " - " + v3;
+            if(v3.Trim().ToUpper() == "VENDEDOR")
+            {
+                compraDeProductosToolStripMenuItem.Enabled = false;
+            }
             //lblUser.Text = v;
 
         }

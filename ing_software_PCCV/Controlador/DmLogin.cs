@@ -83,8 +83,15 @@ namespace Controlador
             if(res.Trim() == "O")
             {
                 return "OK";
+            }else if(res.Trim() == "E")
+            {
+                return "ERROR";
             }
-            return "NO";
+            else
+            {
+                return "NO";
+            }
+           
             
         }
 
