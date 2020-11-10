@@ -273,28 +273,34 @@ namespace ing_software_PCCV.Forms
 
         private void dgvLista_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            decimal ab = 0;
-            string precio = dgvLista.CurrentRow.Cells["Precio"].Value.ToString();
-            string cant = dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString();
-            string ex = dgvLista.CurrentRow.Cells["Existencias"].Value.ToString();
-            decimal pr = Convert.ToDecimal(precio);
-            int ca = Convert.ToInt32(cant);
-            int exi = Convert.ToInt32(ex);
+            if(dgvLista.CurrentRow.Cells["Cantidad"].Value == null || String.IsNullOrEmpty(dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString()))
+            {
+                MessageBox.Show("Ingrese la cantidad de productos", "Error,Cantidad vacia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                decimal ab = 0;
+                string precio = dgvLista.CurrentRow.Cells["Precio"].Value.ToString();
+                string cant = dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString();
+                string ex = dgvLista.CurrentRow.Cells["Existencias"].Value.ToString();
+                decimal pr = Convert.ToDecimal(precio);
+                int ca = Convert.ToInt32(cant);
+                int exi = Convert.ToInt32(ex);
 
-            //if (ca > exi)
-            //{
-            //    MessageBox.Show("Error, La cantidad es mayor que la exitencia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
-            //}
-            //else
-            //{
-                decimal a = pr * ca;
-                
-                decimal val = Convert.ToDecimal(txtSubTotal.Text.Trim());
-                if(val <= 0)
+                if (ca == 0)
                 {
-                    txtSubTotal.Text = a+ "";
-                    lblTotal.Text = a+ "";
+                    MessageBox.Show("Error, La cantidad no puede ser 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   // dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
+                }
+                else
+                {
+                    decimal a = pr * ca;
+
+                decimal val = Convert.ToDecimal(txtSubTotal.Text.Trim());
+                if (val <= 0)
+                {
+                    txtSubTotal.Text = a + "";
+                    lblTotal.Text = a + "";
                 }
                 else
                 {
@@ -303,9 +309,12 @@ namespace ing_software_PCCV.Forms
                     lblTotal.Text = ab + "";
                 }
                 arr2.Add(a);
+            }
+
+            
                
 
-            //}
+            }
         }
 
        
