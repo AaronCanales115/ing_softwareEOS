@@ -126,20 +126,7 @@ namespace ing_software_PCCV.Forms
 
         private void SoloNumeros(KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            if (char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            if (char.IsSymbol(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            ValidarSoloNumero(e);
         }
 
         private void txtNFacturaV_TextChanged(object sender, EventArgs e)
@@ -162,7 +149,7 @@ namespace ing_software_PCCV.Forms
             Cat.Add(val);
             txtCantTot.Text = Convert.ToString(dgvLista.RowCount);
             if(cant != "")
-            {
+        {
                 int ca = Convert.ToInt32(cant.Trim());
                 if(ca >= 0)
                 {
@@ -172,13 +159,13 @@ namespace ing_software_PCCV.Forms
                     valor = Convert.ToDouble(lblTotal.Text.Trim());
                     if (valor <= 0)
                     {
-                       
+
                         lblTotal.Text = a + "";
-                    }
+        }
                     else
                     {
                         ab = a + valor;
-                       
+
                         lblTotal.Text = ab + "";
                     }
                 }
@@ -197,18 +184,18 @@ namespace ing_software_PCCV.Forms
         }
         private void Guardar()
         {
-           
+
             int a = dgvLista.Rows.Count;
             string nf = txtFactura.Text;
             if (nf.Trim() == "")
-            {
+        {
                 MessageBox.Show("Error, Ingrese un número de factura", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
             else
             {
 
                 for (int i = 0; i < a; i++)
-                {
+        {
                     string us = c.obtenerID();
                     string pro = cbxProveedor.SelectedValue.ToString();
                     string nom = dgvLista.Rows[i].Cells[0].Value.ToString();
@@ -221,10 +208,10 @@ namespace ing_software_PCCV.Forms
                     string cat = Cat[i].ToString();
                    string cf=  ODm.agregarProductoNuevo(us,nom,decr,prec,med,cat,estado,fac,canti,pro);
                     Console.WriteLine(cf);
-                }
+        }
 
                 MessageBox.Show("Compra realizada con exito", "COMPRAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-              
+
                 //MessageBox.Show("Uno de los campos en la lista de compras esta vacio", "ERROR, CAMPO VACIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }   
@@ -238,8 +225,8 @@ namespace ing_software_PCCV.Forms
                 txtFactura.Enabled = false;
             }
             if (chxFactura.Checked == false)
-            {
-               
+        {
+
                 txtFactura.Enabled = true;
             }
 
