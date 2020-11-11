@@ -36,7 +36,7 @@ namespace ing_software_PCCV.Forms
             string NFactura = txtNFacturaV.Text;
             string total = "";
 
-            string nombreProductoEx =  c.ConsultaSimple("SELECT Nombre FROM Producto WHERE Nombre = "+ txtNombreV +"");
+            //string nombreProductoEx =  c.ConsultaSimple("SELECT Nombre FROM Producto WHERE Nombre = "+ txtNombreV +"");
 
             ODm.agregarProductoNuevo(usuario, nombre, descripcion, precio, talla, categoria, estado, NFactura, cantidad, total, idProveedor);
             detallesCompra();
