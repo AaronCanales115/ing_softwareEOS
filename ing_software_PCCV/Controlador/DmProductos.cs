@@ -33,16 +33,16 @@ namespace Controlador
             oDt.Eliminar(Convert.ToInt16(id), Convert.ToInt16(usuario), resultado);
         }
 
-        public string agregarProductoNuevo(string usuario, string nombre, string descripcion, string precio, string talla, string categoria, string estado, string NFactura, string cantidad, string idProveedor)
+        public string agregarProductoNuevo(string usuario, string nombre, string descripcion, string precioVenta, string precioCompra, string talla, string categoria, string estado, string NFactura, string cantidad, string idProveedor)
         {
             
             int us = Convert.ToInt16(usuario.Trim());
             int cat = Convert.ToInt16(categoria.Trim());
-            decimal pre = Convert.ToDecimal(precio.Trim());
+            decimal pre = Convert.ToDecimal(precioCompra.Trim());
            int cant =  Convert.ToInt32(cantidad.Trim());
             decimal tot = pre * cant;
           
-            string val = oDt.agregarProductoNuevo(us, nombre, descripcion, Convert.ToDecimal(precio), talla, cat, Convert.ToInt32(estado), NFactura, Convert.ToInt32(cantidad), tot, Convert.ToInt16(idProveedor));
+            string val = oDt.agregarProductoNuevo(us, nombre, descripcion, Convert.ToDecimal(precioVenta), pre, talla, cat, Convert.ToInt32(estado), NFactura, Convert.ToInt32(cantidad), tot, Convert.ToInt16(idProveedor));
             return val;
         }
     }

@@ -28,13 +28,14 @@ namespace ing_software_PCCV.Forms
         {
             string nombre = txtNombreV.Text;
             string descripcion = txtDescripcionV.Text;
-            string precio = txtPrecioV.Text;
+            string precio = txtPrecioC.Text;
             string cantidad = txtCantidadV.Text;
             string talla = txtTalla.Text;
+            string precioVenta = txtPrecioVenta.Text;
             bool nom = validarNombre(nombre);
             if (nom)
             {
-                agregar(nombre, precio, cantidad, talla, descripcion);
+                agregar(nombre, precio,precioVenta, cantidad, talla, descripcion);
             }
             else
             {
@@ -73,10 +74,7 @@ namespace ing_software_PCCV.Forms
 
         }
 
-        public void mostrarVistaPreliminar()
-        {
-
-        }
+        
 
         private void rbtnVestimenta_CheckedChanged(object sender, EventArgs e)
         {
@@ -148,16 +146,17 @@ namespace ing_software_PCCV.Forms
         {
 
         }
-        private void agregar( string nombre, string precio, string cant,string medida, string desc)//agrega los productos al dgv
+        private void agregar( string nombre, string precio, string precioVenta, string cant,string medida, string desc)//agrega los productos al dgv
         {
             double valor = 0, ab =0;
             DataGridViewRow fila = new DataGridViewRow();
             fila.CreateCells(dgvLista);
             fila.Cells[0].Value = nombre;
             fila.Cells[1].Value = precio;
-            fila.Cells[2].Value = medida;
-            fila.Cells[3].Value = cant;
-            fila.Cells[4].Value = desc;
+            fila.Cells[2].Value = precioVenta;
+            fila.Cells[3].Value = medida;
+            fila.Cells[4].Value = cant;
+            fila.Cells[5].Value = desc;
 
             dgvLista.Rows.Add(fila);
             string val = lblCategoria.Text.Trim();
@@ -175,28 +174,24 @@ namespace ing_software_PCCV.Forms
                     if (valor <= 0)
                     {
 
-                        lblTotal.Text = a + "";
+                        lblTotal2.Text = a + "";
         }
                     else
                     {
                         ab = a + valor;
 
-                        lblTotal.Text = ab + "";
+                        lblTotal2.Text = ab + "";
+                        
                     }
+                    txtNFacturaP.Text = txtFactura.Text;
+                    txtCantidadTotalP.Text = dgvLista.RowCount.ToString();
                 }
             }
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            Guardar();
-        }
+        
         private void Guardar()
         {
 
@@ -215,13 +210,14 @@ namespace ing_software_PCCV.Forms
                     string pro = cbxProveedor.SelectedValue.ToString();
                     string nom = dgvLista.Rows[i].Cells[0].Value.ToString();
                     string prec = dgvLista.Rows[i].Cells[1].Value.ToString();
-                    string med = dgvLista.Rows[i].Cells[2].Value.ToString();
-                    string canti = dgvLista.Rows[i].Cells[3].Value.ToString();
-                    string decr = dgvLista.Rows[i].Cells[4].Value.ToString();
+                    string precV = dgvLista.Rows[i].Cells[2].Value.ToString();
+                    string med = dgvLista.Rows[i].Cells[3].Value.ToString();
+                    string canti = dgvLista.Rows[i].Cells[4].Value.ToString();
+                    string decr = dgvLista.Rows[i].Cells[5].Value.ToString();
                     string estado = "1";
                     string fac = txtFactura.Text;
                     string cat = Cat[i].ToString();
-                   string cf=  ODm.agregarProductoNuevo(us,nom,decr,prec,med,cat,estado,fac,canti,pro);
+                   string cf=  ODm.agregarProductoNuevo(us,nom,decr,prec, precV,med,cat,estado,fac,canti,pro);
                     Console.WriteLine(cf);
         }
 
@@ -243,8 +239,14 @@ namespace ing_software_PCCV.Forms
         {
 
                 txtFactura.Enabled = true;
+                txtFactura.Text = "";
             }
 
+        }
+
+        private void btnFinalizar2_Click(object sender, EventArgs e)
+        {
+            Guardar();
         }
     }
 }

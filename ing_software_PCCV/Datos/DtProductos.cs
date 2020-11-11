@@ -59,7 +59,7 @@ namespace Datos
             comando.Parameters.Clear();
         }
 
-        public string agregarProductoNuevo(int usuario, string nombre, string descripcion, decimal precio, string talla, int categoria, int estado, string NFactura, int cantidad, decimal total, int idProveedor)
+        public string agregarProductoNuevo(int usuario, string nombre, string descripcion, decimal precioVenta, decimal precioCompra, string talla, int categoria, int estado, string NFactura, int cantidad, decimal total, int idProveedor)
         {
             try
             {
@@ -69,7 +69,8 @@ namespace Datos
                 comando.Parameters.AddWithValue("@Usuario", usuario);
                 comando.Parameters.AddWithValue("@Nombre", nombre);
                 comando.Parameters.AddWithValue("@Descripcion", descripcion);
-                comando.Parameters.AddWithValue("@Precio", precio);
+                comando.Parameters.AddWithValue("@PrecioVenta", precioVenta);
+                comando.Parameters.AddWithValue("@PrecioCompra", precioCompra);
                 comando.Parameters.AddWithValue("@Talla", talla);
                 comando.Parameters.AddWithValue("@Categoria", categoria);
                 comando.Parameters.AddWithValue("@Estado", estado);
