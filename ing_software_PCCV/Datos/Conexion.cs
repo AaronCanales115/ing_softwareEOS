@@ -11,10 +11,10 @@ namespace Datos
     public class Conexion
     {
         
-    public SqlConnection conexion = new SqlConnection("Data Source = AARONPC; Initial Catalog = dbStore; Integrated Security = True");
-    //public SqlConnection conexion = new SqlConnection("Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True");
+    //public SqlConnection conexion = new SqlConnection("Data Source = AARONPC; Initial Catalog = dbStore; Integrated Security = True");
+        //public SqlConnection conexion = new SqlConnection("Data Source = VARGASFLORES; Initial Catalog = dbStore; Integrated Security = True");
+        public SqlConnection conexion = new SqlConnection("Data Source = DEARCAT; Initial Catalog = dbStore; Integrated Security = True");
 
-        
 
         public SqlConnection AbrirConexion()
         {
