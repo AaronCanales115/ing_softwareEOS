@@ -14,6 +14,8 @@ namespace Controlador
         DtConsultas c = new DtConsultas();
         ArrayList arr = new ArrayList();
         DataTable dt = new DataTable();
+        DmObtenerIP IP = new DmObtenerIP();
+       
         public string ConsultaSimple(string sql)
         {
            string resultado =  c.CSimple(sql);
@@ -39,6 +41,13 @@ namespace Controlador
         public void Insertar(string sql)
         {
             c.Insertar(sql);
+        }
+        public string obtenerID()
+        {
+            string IPM = IP.ObtenerMac();
+            string ip = ConsultaSimple("SELECT IpMaquina.idUsuario FROM IpMaquina WHERE ipMaquina ='" + IPM.Trim() + "'");
+
+            return ip;
         }
     }
 }

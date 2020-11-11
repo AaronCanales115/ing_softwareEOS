@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
-
+using System.Collections;
 namespace ing_software_PCCV.Forms
 {
     public partial class FrmAgregarProdN : Form
@@ -20,6 +20,8 @@ namespace ing_software_PCCV.Forms
         private DmProductos ODm = new DmProductos();
         private DmObtenerIP IP = new DmObtenerIP();
         private DmConsultas c = new DmConsultas();
+        ArrayList Cat = new ArrayList();
+
 
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -28,207 +30,206 @@ namespace ing_software_PCCV.Forms
             string descripcion = txtDescripcionV.Text;
             string precio = txtPrecioV.Text;
             string cantidad = txtCantidadV.Text;
-            string idProveedor = cbxProveedor.SelectedValue.ToString();
-            string estado = cbxEstado.SelectedText.ToString();
             string talla = txtTalla.Text;
-            string usuario = lblidUsuario.Text;
-            string categoria = "1";
-            string NFactura = txtNFacturaV.Text;
-            string total = "";
+            bool nom = validarNombre(nombre);
+            if (nom)
+            {
+                agregar(nombre, precio, cantidad, talla, descripcion);
+            }
+            else
+            {
+                MessageBox.Show("Ya ingresó un producto con el mismo nombre","Error, Producto repetido",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+           
 
-            //string nombreProductoEx =  c.ConsultaSimple("SELECT Nombre FROM Producto WHERE Nombre = "+ txtNombreV +"");
 
-            ODm.agregarProductoNuevo(usuario, nombre, descripcion, precio, talla, categoria, estado, NFactura, cantidad, total, idProveedor);
-            detallesCompra();
-            limpiar();
-            MessageBox.Show("Producto guardado");
+          //  MessageBox.Show("Producto guardado");
 
         }
 
         private void txtCantidadV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidarSoloNumero(e);
+            SoloNumeros(e);
         }
 
         private void txtPrecioV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidarSoloNumero(e);
+            SoloNumeros(e);
         }
 
         private void FrmAgregarProdN_Load(object sender, EventArgs e)
         {
-            string IMP = IP.ObtenerMac();
-            string ip = c.ConsultaSimple("SELECT IpMaquina.idUsuario FROM IpMaquina WHERE ipMaquina ='" + IMP.Trim() + "'");
+            string ip = c.obtenerID();
             lblidUsuario.Text = ip;
-
+            Cat.Clear();
             llenarcbx();
         }
 
         public void llenarcbx()
         {
-            cbxProveedor.DataSource = c.ConsultaTab("SELECT idProveedor, RazonSocial FROM Proveedor;");
+            cbxProveedor.DataSource = c.ConsultaTab("SELECT RazonSocial, idProveedor FROM Proveedor;");
             cbxProveedor.DisplayMember = "RazonSocial";
             cbxProveedor.ValueMember = "idProveedor";
 
-            cbxProveedorC.DataSource = c.ConsultaTab("SELECT idProveedor, RazonSocial FROM Proveedor;");
-            cbxProveedorC.DisplayMember = "RazonSocial";
-            cbxProveedorC.ValueMember = "idProveedor";
-
-            cbxProveedorB.DataSource = c.ConsultaTab("SELECT idProveedor, RazonSocial FROM Proveedor;");
-            cbxProveedorB.DisplayMember = "RazonSocial";
-            cbxProveedorB.ValueMember = "idProveedor";
         }
 
+        public void mostrarVistaPreliminar()
+        {
+
+        }
 
         private void rbtnVestimenta_CheckedChanged(object sender, EventArgs e)
         {
-            gbVestimenta.Visible = true;
-            gbBisuteria.Visible = false;
-            gbCalzado.Visible = false;
+           if(rbtnVestimenta.Checked == true)
+            {
+                lblCategoria.Text = "1";
+                lblTalla.Text = "Talla";
+            }
+          
         }
 
         private void rbtnCalzado_CheckedChanged(object sender, EventArgs e)
         {
-            gbVestimenta.Visible = false;
-            gbBisuteria.Visible = false;
-            gbCalzado.Visible = true;
+            if (rbtnCalzado.Checked == true)
+            {
+                lblCategoria.Text = "5";
+                lblTalla.Text = "Tamaño";
+            }
         }
 
         private void rbtnBisuteria_CheckedChanged(object sender, EventArgs e)
         {
-            gbVestimenta.Visible = false;
-            gbBisuteria.Visible = true;
-            gbCalzado.Visible = false;
-        }
-
-        private void btnGuardarC_Click(object sender, EventArgs e)
-        {
-            string nombreC = txtNombreC.Text;
-            string descripcionC = txtDescripcionC.Text;
-            string precioC = txtPrecioC.Text;
-            string cantidadC = txtCantidadC.Text;
-            string proveedorC = cbxProveedorC.SelectedValue.ToString();
-            string estadoC = cbxEstadoC.SelectedText.ToString();
-            string tallaC = txtTallaC.Text;
-            string usuario = lblidUsuario.Text;
-            string categoria = "5";
-            string NFactura = txtNFacturaC.Text;
-            string total = "";
-
-            ODm.agregarProductoNuevo(usuario, nombreC, descripcionC, precioC, tallaC, categoria, estadoC, NFactura, cantidadC, total, proveedorC);
-            limpiar();
-            MessageBox.Show("Producto guardado");
-        }
-
-        private void btnGuardarB_Click(object sender, EventArgs e)
-        {
-            string nombreB = txtNombreB.Text;
-            string descripcionB = txtDescripcionB.Text;
-            string precioB = txtPrecioB.Text;
-            string cantidadB = txtCantidadB.Text;
-            string proveedorB = cbxProveedorB.SelectedValue.ToString();
-            string estadoB = cbxEstadoB.SelectedText.ToString();
-            string talla = "";
-            string usuario = lblidUsuario.Text;
-            string categoria = "1";
-            string NFactura = txtNFacturaB.Text;
-            string total = "";
-
-            ODm.agregarProductoNuevo(usuario, nombreB, descripcionB, precioB, talla, categoria, estadoB, NFactura, cantidadB, total, proveedorB);
-            limpiar();
-            MessageBox.Show("Producto guardado");
-        }
-
-        public void detallesCompra()
-        {
-            if (rbtnVestimenta.Checked == true)
-            {
-                int piezas = Convert.ToInt32(txtCantidadV.Text);
-                double precio = Convert.ToDouble(txtPrecioV.Text);
-                double subTotal = precio * piezas;
-
-                txtNPiezas.Text = piezas.ToString();
-                txtSubTotal.Text = subTotal.ToString();
-                lblTotal.Text = "C$ " + subTotal.ToString();
-
-            }
-
-            if (rbtnCalzado.Checked == true)
-            {
-                int piezas = Convert.ToInt32(txtCantidadC.Text);
-                double precio = Convert.ToDouble(txtPrecioC.Text);
-                double subTotal = precio * piezas;
-
-                txtNPiezas.Text = piezas.ToString();
-                txtSubTotal.Text = subTotal.ToString();
-                lblTotal.Text = "C$ " + subTotal.ToString();
-
-            }
-
             if (rbtnBisuteria.Checked == true)
             {
-                int piezas = Convert.ToInt32(txtCantidadB.Text);
-                double precio = Convert.ToDouble(txtPrecioB.Text);
-                double subTotal = precio * piezas;
+                lblCategoria.Text = "9";
+                lblTalla.Text = "Unidades";
+            }
+        }
 
-                txtNPiezas.Text = piezas.ToString();
-                txtSubTotal.Text = subTotal.ToString();
-                lblTotal.Text = "C$ " + subTotal.ToString();
+        private bool validarNombre(string nombre)
+        {
+            string name;
+            int a = dgvLista.Rows.Count;
+            for (int i = 0; i < a; i++)
+            {
+                name = dgvLista.Rows[i].Cells[0].Value.ToString();
+                if (name.Trim().Equals(nombre.Trim()))
+                {
 
+                    i = a;
+                    return false;
+                }
+            }
+            return true;
+        }//valoda que no se ingrese un producto repetido
+
+
+        private void SoloNumeros(KeyPressEventArgs e)
+        {
+            ValidarSoloNumero(e);
+        }
+
+        private void txtNFacturaV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void agregar( string nombre, string precio, string cant,string medida, string desc)//agrega los productos al dgv
+        {
+            double valor = 0, ab =0;
+            DataGridViewRow fila = new DataGridViewRow();
+            fila.CreateCells(dgvLista);
+            fila.Cells[0].Value = nombre;
+            fila.Cells[1].Value = precio;
+            fila.Cells[2].Value = medida;
+            fila.Cells[3].Value = cant;
+            fila.Cells[4].Value = desc;
+
+            dgvLista.Rows.Add(fila);
+            string val = lblCategoria.Text.Trim();
+            Cat.Add(val);
+            txtCantTot.Text = Convert.ToString(dgvLista.RowCount);
+            if(cant != "")
+        {
+                int ca = Convert.ToInt32(cant.Trim());
+                if(ca >= 0)
+                {
+                    double pre = Convert.ToDouble(precio);
+                    double a = pre * ca;
+
+                    valor = Convert.ToDouble(lblTotal.Text.Trim());
+                    if (valor <= 0)
+                    {
+
+                        lblTotal.Text = a + "";
+        }
+                    else
+                    {
+                        ab = a + valor;
+
+                        lblTotal.Text = ab + "";
+                    }
+                }
             }
 
         }
 
-        public void limpiar()
+        private void label7_Click(object sender, EventArgs e)
         {
-            //vestimenta
-            txtNombreV.Clear();
-            txtDescripcionV.Clear();
-            txtPrecioV.Clear();
-            txtCantidadV.Clear();
-            cbxProveedor.SelectedIndex = 0;
-            cbxEstado.SelectedIndex = 0;
-            txtTalla.Clear();
-            txtNFacturaV.Clear();
 
-            //bisuteria
-            txtNombreB.Clear();
-            txtDescripcionB.Clear();
-            txtPrecioB.Clear();
-            txtCantidadB.Clear();
-            cbxProveedorB.SelectedIndex = 0;
-            cbxEstadoB.SelectedIndex = 0;
-            txtNFacturaB.Clear();
-
-            //Calzado
-            txtNombreC.Clear();
-            txtDescripcionC.Clear();
-            txtPrecioC.Clear();
-            txtCantidadC.Clear();
-            cbxProveedorC.SelectedIndex = 0;
-            cbxEstadoC.SelectedIndex = 0;
-            txtTallaC.Clear();
-            txtNFacturaC.Clear();
         }
 
-        private void ValidarSoloNumero(KeyPressEventArgs e)
+        private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            Guardar();
+        }
+        private void Guardar()
+        {
+
+            int a = dgvLista.Rows.Count;
+            string nf = txtFactura.Text;
+            if (nf.Trim() == "")
+        {
+                MessageBox.Show("Error, Ingrese un número de factura", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
             else
             {
-                e.Handled = true;
+
+                for (int i = 0; i < a; i++)
+        {
+                    string us = c.obtenerID();
+                    string pro = cbxProveedor.SelectedValue.ToString();
+                    string nom = dgvLista.Rows[i].Cells[0].Value.ToString();
+                    string prec = dgvLista.Rows[i].Cells[1].Value.ToString();
+                    string med = dgvLista.Rows[i].Cells[2].Value.ToString();
+                    string canti = dgvLista.Rows[i].Cells[3].Value.ToString();
+                    string decr = dgvLista.Rows[i].Cells[4].Value.ToString();
+                    string estado = "1";
+                    string fac = txtFactura.Text;
+                    string cat = Cat[i].ToString();
+                   string cf=  ODm.agregarProductoNuevo(us,nom,decr,prec,med,cat,estado,fac,canti,pro);
+                    Console.WriteLine(cf);
+        }
+
+                MessageBox.Show("Compra realizada con exito", "COMPRAR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //MessageBox.Show("Uno de los campos en la lista de compras esta vacio", "ERROR, CAMPO VACIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }   
+        }
+
+        private void chxFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chxFactura.Checked == true)
+            {
+                txtFactura.Text = "SIN FACTURA";
+                txtFactura.Enabled = false;
             }
+            if (chxFactura.Checked == false)
+        {
+
+                txtFactura.Enabled = true;
+            }
+
         }
     }
 }
