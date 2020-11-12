@@ -20,6 +20,7 @@ namespace ing_software_PCCV.Forms
         }
         private DmProductos ODm = new DmProductos();
         ArrayList arr1 = new ArrayList();
+        ArrayList arr2 = new ArrayList();
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
@@ -30,7 +31,7 @@ namespace ing_software_PCCV.Forms
             ODm.MostrarProductos(dgvMostrar, valor);
             dgvMostrar.Columns["Descripcion"].Visible = false;
             
-        }
+        }//mostrar los productos en el datagrid
 
         private void radioButton1_Click(object sender, EventArgs e)
         {
@@ -53,14 +54,14 @@ namespace ing_software_PCCV.Forms
             mostrar("9");
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)//Busca en la base de datos
         {
             int valor = Convert.ToInt16(lblValor.Text.Trim());
             Buscar b = new Buscar();
             b.Filtrar(dgvMostrar, this.txtBuscar.Text.Trim(), valor);
             dgvMostrar.Columns["PCompra"].Visible = false;
         }
-        private void DataGrid()
+        private void DataGrid()//Agrega los valores de la tabla a las variables
         {
             string talla;
             if (dgvMostrar.SelectedRows.Count > 0)
@@ -106,7 +107,7 @@ namespace ing_software_PCCV.Forms
             }
 
         }
-        private void agregar(string id, string Nombre, decimal Precio, int existencia)
+        private void agregar(string id, string Nombre, decimal Precio, int existencia)//agrega los productos a la tabla lista
         {
 
             DataGridViewRow fila = new DataGridViewRow();
@@ -121,7 +122,7 @@ namespace ing_software_PCCV.Forms
 
 
         }
-        private bool validarNombre(string nombre)
+        private bool validarNombre(string nombre)//validar si el nombre esta repetido
         {
             string name;
             int a = dgvLista.Rows.Count;
@@ -167,6 +168,62 @@ namespace ing_software_PCCV.Forms
             DataGridViewTextBoxEditingControl dText = (DataGridViewTextBoxEditingControl)e.Control;
             dText.KeyPress -= new KeyPressEventHandler(dText_KeyPress);
             dText.KeyPress += new KeyPressEventHandler(dText_KeyPress);
+        }
+
+        private void dgvLista_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dgvLista_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvLista.CurrentRow.Cells["Cantidad"].Value == null || String.IsNullOrEmpty(dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString()))
+            {
+                MessageBox.Show("Ingrese la cantidad de productos", "Error,Cantidad vacia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                decimal ab = 0;
+                string precio = dgvLista.CurrentRow.Cells["Precio"].Value.ToString();
+                string cant = dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString();
+                string ex = dgvLista.CurrentRow.Cells["Existencias"].Value.ToString();
+                decimal pr = Convert.ToDecimal(precio);
+                int ca = Convert.ToInt32(cant);
+                int exi = Convert.ToInt32(ex);
+                if (ca > exi)
+                {
+                    MessageBox.Show("Error, La cantidad a vender no puede ser mayor que la existencia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (ca == 0)
+                    {
+                        MessageBox.Show("Error, La cantidad no puede ser 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
+                    }
+                    else
+                    {
+                        decimal a = pr * ca;
+
+                        decimal val = Convert.ToDecimal(txtSubTotal.Text.Trim());
+                        if (val <= 0)
+                        {
+                            txtSubTotal.Text = a + "";
+                            lblTotal.Text = a + "";
+                        }
+                        else
+                        {
+                            ab = a + val;
+                            txtSubTotal.Text = ab + "";
+                            lblTotal.Text = ab + "";
+                        }
+                        arr2.Add(a);
+                    }
+                }
+
+
+
+            }
         }
     }
 }
