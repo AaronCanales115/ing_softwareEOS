@@ -280,7 +280,7 @@ namespace ing_software_PCCV.Forms
             else
             {
                 decimal ab = 0;
-                string precio = dgvLista.CurrentRow.Cells["Precio"].Value.ToString();
+                string precio = dgvLista.CurrentRow.Cells["PCompra"].Value.ToString();
                 string cant = dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString();
                 string ex = dgvLista.CurrentRow.Cells["Existencias"].Value.ToString();
                 decimal pr = Convert.ToDecimal(precio);

@@ -13,8 +13,8 @@ namespace Datos
         private Conexion conexion = new Conexion();
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-
-        public string agregarVenta(string NFactura, int usuario, string nombreC, string apellidoC, int cantidadProductos, decimal descuento, decimal iva, decimal subTotal, decimal total)
+       
+        public string agregarVenta(string NFactura, int usuario, string nombreC, string apellidoC, int cantidadProductos, decimal descuento, decimal subTotal, decimal total)
         {
             try
             {
@@ -22,20 +22,21 @@ namespace Datos
                 comando.CommandText = "SPAgregarVenta";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@NFactura", NFactura);
-                comando.Parameters.AddWithValue("@Usuario", usuario);
+                comando.Parameters.AddWithValue("@idUsuario", usuario);
                 comando.Parameters.AddWithValue("@NombreC", nombreC);
                 comando.Parameters.AddWithValue("@ApellidoC", apellidoC);
                 comando.Parameters.AddWithValue("@cantidadProductos", cantidadProductos);
                 comando.Parameters.AddWithValue("@descuento", descuento);
-                comando.Parameters.AddWithValue("@iva", iva);
                 comando.Parameters.AddWithValue("@subTotal", subTotal);
                 comando.Parameters.AddWithValue("@Total", total);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
-                return "OK";
+                return "SI";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
+
                 return "NO";
             }
         }

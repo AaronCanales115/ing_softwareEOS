@@ -7,13 +7,14 @@ using Datos;
 
 namespace Controlador
 {
-    class DmVentas
+    public class DmVentas
     {
         private DtVentas oDt = new DtVentas();
 
-        public void agregarVenta(string NFactura, string usuario, string nombreC, string apellidoC, string cantidadProductos, string descuento, string iva, string subTotal, string total)
+        public string agregarVenta(string NFactura, string usuario, string nombreC, string apellidoC, string cantidadProductos, string descuento, string subTotal, string total)
         {
-            oDt.agregarVenta(NFactura, Convert.ToInt16(usuario), nombreC, apellidoC, Convert.ToInt16(cantidadProductos), Convert.ToDecimal(descuento), Convert.ToDecimal(iva), Convert.ToDecimal(subTotal), Convert.ToDecimal(total));
+           string re = oDt.agregarVenta(NFactura, Convert.ToInt16(usuario), nombreC, apellidoC, Convert.ToInt16(cantidadProductos), Convert.ToDecimal(descuento), Convert.ToDecimal(subTotal), Convert.ToDecimal(total));
+            return re;
         }
 
         public void ventaProducto(string idProducto, string idv, string cantidad)
