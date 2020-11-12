@@ -44,6 +44,7 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.lbldato = new System.Windows.Forms.Label();
             this.lbldato2 = new System.Windows.Forms.Label();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +59,8 @@
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.inventarioToolStripMenuItem,
-            this.compraDeProductosToolStripMenuItem});
+            this.compraDeProductosToolStripMenuItem,
+            this.ventasToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 44);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -94,20 +96,20 @@
             this.nuevoToolStripMenuItem,
             this.existenteToolStripMenuItem});
             this.compraDeProductosToolStripMenuItem.Name = "compraDeProductosToolStripMenuItem";
-            this.compraDeProductosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.compraDeProductosToolStripMenuItem.Text = "Compra de productos";
+            this.compraDeProductosToolStripMenuItem.Size = new System.Drawing.Size(74, 22);
+            this.compraDeProductosToolStripMenuItem.Text = "Compra";
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // existenteToolStripMenuItem
             // 
             this.existenteToolStripMenuItem.Name = "existenteToolStripMenuItem";
-            this.existenteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.existenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.existenteToolStripMenuItem.Text = "Existente";
             this.existenteToolStripMenuItem.Click += new System.EventHandler(this.existenteToolStripMenuItem_Click);
             // 
@@ -194,6 +196,13 @@
             this.lbldato2.Text = "Lave";
             this.lbldato2.Visible = false;
             // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -247,6 +256,7 @@
         private System.Windows.Forms.ToolStripMenuItem compraDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem existenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
     }
 }
 

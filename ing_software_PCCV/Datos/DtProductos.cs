@@ -28,6 +28,17 @@ namespace Datos
             
            
         }
+        public void mostrarProductosVentas(DataGridView data, int Numero)
+        {
+            DataTable tab = new DataTable();
+            SqlCommand sql = new SqlCommand("SPMostrarProductos", conexion.AbrirConexion());
+            sql.CommandType = CommandType.StoredProcedure;
+            sql.Parameters.AddWithValue("@Valor", Numero);
+            sql.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(sql);
+            da.Fill(tab);
+            data.DataSource = tab;
+        }
       
 
         public void Editar(int id, string nombre, string descripcion, decimal precio, int stock, string talla,int estado, int usuario)

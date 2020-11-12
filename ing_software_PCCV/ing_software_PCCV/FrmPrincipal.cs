@@ -101,5 +101,10 @@ namespace ing_software_PCCV
         {
             abrirForm(new Forms.FrmAgregarProdE());
         }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Forms.FrmVentas());
+        }
     }
 }

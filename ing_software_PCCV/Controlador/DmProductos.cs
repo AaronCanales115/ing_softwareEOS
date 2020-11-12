@@ -22,6 +22,15 @@ namespace Controlador
         
          
         }
+        public void MostrarProductosVentas(DataGridView dgv, string numero)
+        {
+
+            int valor = Convert.ToInt16(numero);
+            oDt.mostrarProductos(dgv, valor);
+            dgv.Columns["ID"].Visible = false;
+
+
+        }
 
         public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla, string estado, string usuario)
         {
