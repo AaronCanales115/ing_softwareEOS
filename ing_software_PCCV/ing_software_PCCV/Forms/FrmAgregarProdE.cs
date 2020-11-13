@@ -363,6 +363,12 @@ namespace ing_software_PCCV.Forms
             radioButton1.Checked = true;
             //dgvLista.Columns.Clear();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmProveedores pr = new FrmProveedores();
+            pr.ShowDialog();
+        }
     }
        
     

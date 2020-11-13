@@ -49,6 +49,7 @@
     <Compile Include="DmObtenerIP.cs" />
     <Compile Include="DmProductos.cs" />
     <Compile Include="DConexion.cs" />
+    <Compile Include="DmProveedor.cs" />
     <Compile Include="DmVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

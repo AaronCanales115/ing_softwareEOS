@@ -54,5 +54,6 @@ namespace Controlador
             string val = oDt.agregarProductoNuevo(us, nombre, descripcion, Convert.ToDecimal(precioVenta), pre, talla, cat, Convert.ToInt32(estado), NFactura, Convert.ToInt32(cantidad), tot, Convert.ToInt16(idProveedor));
             return val;
         }
+      
     }
 }

@@ -64,6 +64,9 @@ namespace ing_software_PCCV
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            this.MaximumSize = SystemInformation.PrimaryMonitorMaximizedWindowSize;
+            WindowState = FormWindowState.Maximized;
+            FormBorderStyle = FormBorderStyle.None;
             string v, v2, v3;
             ArrayList arr = new ArrayList();
             string valor = lbldato.Text.Trim();
@@ -105,6 +108,17 @@ namespace ing_software_PCCV
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             abrirForm(new Forms.FrmVentas());
+        }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FrmProveedores prove = new Forms.FrmProveedores();
+            prove.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

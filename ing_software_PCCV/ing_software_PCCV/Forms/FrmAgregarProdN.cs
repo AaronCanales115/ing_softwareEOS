@@ -248,5 +248,11 @@ namespace ing_software_PCCV.Forms
         {
             Guardar();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmProveedores p = new FrmProveedores();
+            p.ShowDialog();
+        }
     }
 }

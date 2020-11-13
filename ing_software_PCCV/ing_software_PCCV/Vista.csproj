@@ -64,6 +64,12 @@
     <Compile Include="Forms\FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmVentas.resx">
       <DependentUpon>FrmVentas.cs</DependentUpon>
@@ -132,17 +141,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="imagenes\068minimize_100011.png" />
+    <Content Include="imagenes\1497619953-jd27_85177.png" />
     <Content Include="imagenes\1499345621-contact_85338.png" />
     <Content Include="imagenes\4115230-cancel-close-cross-delete_114048.png" />
     <Content Include="imagenes\c-temperature-folded-icon_30475.png" />
     <Content Include="imagenes\Close Window_ 2 48px.png" />
     <Content Include="imagenes\imq.PNG" />
     <Content Include="imagenes\Logo2.PNG" />
-    <Content Include="imagenes\Maximize Window_2 48px.png" />
     <Content Include="imagenes\mbrilock_99595.png" />
-    <Content Include="imagenes\Minimize Window_2 48px.png" />
-    <Content Include="imagenes\Restore Window 2_48px.png" />
-    <Content Include="imagenes\user_person_13936.png" />
+    <Content Include="imagenes\minimize_118918.png" />
     <Content Include="imagenes\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
