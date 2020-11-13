@@ -32,9 +32,9 @@ namespace Controlador
 
         }
 
-        public void Editar(string id, string nombre, string descripcion, string precio, string stock, string talla, string estado, string usuario)
+        public void Editar(string id, string nombre, string descripcion, string precioVenta,string precioCompra, string stock, string talla, string estado, string usuario)
         {
-            oDt.Editar(Convert.ToInt16(id), nombre, descripcion, Convert.ToDecimal(precio), Convert.ToInt16(stock), talla, Convert.ToInt16(estado), Convert.ToInt16(usuario));
+            oDt.Editar(Convert.ToInt16(id), nombre, descripcion, Convert.ToDecimal(precioVenta), Convert.ToDecimal(precioCompra), Convert.ToInt16(stock), talla, Convert.ToInt16(estado), Convert.ToInt16(usuario));
         }
 
         public void eliminar(string id, string usuario, string resultado)

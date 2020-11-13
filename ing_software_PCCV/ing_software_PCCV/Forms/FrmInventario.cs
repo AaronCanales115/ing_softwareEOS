@@ -44,7 +44,7 @@ namespace ing_software_PCCV.Forms
         private void FrmInventario_Load(object sender, EventArgs e)
         {
             string IPM = IP.ObtenerMac();
-            string ip = c.ConsultaSimple("SELECT IpMaquina.idUsuario FROM IpMaquina WHERE ipMaquina ='" + IPM.Trim() + "'");
+            string ip = c.obtenerID();
              lblUs.Text = ip;
             mostrarProductos("1");
            
@@ -57,9 +57,11 @@ namespace ing_software_PCCV.Forms
             if (dgvMostrar.SelectedRows.Count > 0)
             {
                 idProducto = dgvMostrar.CurrentRow.Cells["ID"].Value.ToString();
+                lblidP.Text = idProducto;
                 txtNombre.Text = dgvMostrar.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = dgvMostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
-                txtPrecio.Text = dgvMostrar.CurrentRow.Cells["Precio"].Value.ToString();
+                txtPrecioCompra.Text = dgvMostrar.CurrentRow.Cells["PCompra"].Value.ToString();
+                txtPrecioVenta.Text = dgvMostrar.CurrentRow.Cells["PVenta"].Value.ToString();
                 txtStock.Text = dgvMostrar.CurrentRow.Cells["Cantidad"].Value.ToString();
                 if(lblValor.Text.Trim() == "1")
                 {
@@ -102,14 +104,16 @@ namespace ing_software_PCCV.Forms
 
         private void btnModificar_Click_2(object sender, EventArgs e)
         {
+            string idP = lblidP.Text.Trim();
             string nombre = txtNombre.Text;
             string descripcion = txtDescripcion.Text;
-            string precio = txtPrecio.Text;
+            string preciocompra = txtPrecioCompra.Text;
+            string precioventa = txtPrecioVenta.Text;
             string stock = txtStock.Text;
             string talla = txtTalla.Text;
             string usuario = lblUs.Text.Trim();
             string estado = "1";
-            ODm.Editar(idProducto, nombre, descripcion, precio, stock, talla,estado, usuario);
+            ODm.Editar(idP, nombre, descripcion,precioventa, preciocompra, stock, talla,estado, usuario);
             mostrarProductos(lblValor.Text.Trim());
             MessageBox.Show("Producto modificado","Modificar",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }

@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
             this.gbMenu = new System.Windows.Forms.GroupBox();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtTalla = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,6 +56,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblUs = new System.Windows.Forms.Label();
+            this.lblidP = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
@@ -104,26 +107,26 @@
             this.dgvMostrar.BackgroundColor = System.Drawing.Color.White;
             this.dgvMostrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMostrar.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMostrar.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMostrar.GridColor = System.Drawing.SystemColors.GrayText;
             this.dgvMostrar.Location = new System.Drawing.Point(12, 125);
             this.dgvMostrar.Name = "dgvMostrar";
             this.dgvMostrar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMostrar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMostrar.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMostrar.RowHeadersWidth = 5;
             this.dgvMostrar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMostrar.Size = new System.Drawing.Size(855, 612);
@@ -132,12 +135,14 @@
             // 
             // gbMenu
             // 
+            this.gbMenu.Controls.Add(this.txtPrecioVenta);
+            this.gbMenu.Controls.Add(this.label2);
             this.gbMenu.Controls.Add(this.txtTalla);
             this.gbMenu.Controls.Add(this.label7);
             this.gbMenu.Controls.Add(this.txtStock);
             this.gbMenu.Controls.Add(this.btnModificar);
             this.gbMenu.Controls.Add(this.label6);
-            this.gbMenu.Controls.Add(this.txtPrecio);
+            this.gbMenu.Controls.Add(this.txtPrecioCompra);
             this.gbMenu.Controls.Add(this.label5);
             this.gbMenu.Controls.Add(this.txtDescripcion);
             this.gbMenu.Controls.Add(this.label4);
@@ -150,9 +155,25 @@
             this.gbMenu.TabStop = false;
             this.gbMenu.Text = "Actualizar Datos";
             // 
+            // txtPrecioVenta
+            // 
+            this.txtPrecioVenta.Location = new System.Drawing.Point(31, 182);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(190, 23);
+            this.txtPrecioVenta.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Precio de Venta";
+            // 
             // txtTalla
             // 
-            this.txtTalla.Location = new System.Drawing.Point(31, 222);
+            this.txtTalla.Location = new System.Drawing.Point(31, 275);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(193, 23);
             this.txtTalla.TabIndex = 14;
@@ -162,7 +183,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 202);
+            this.label7.Location = new System.Drawing.Point(28, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 13;
@@ -170,45 +191,48 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(31, 176);
+            this.txtStock.Location = new System.Drawing.Point(31, 229);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(193, 23);
             this.txtStock.TabIndex = 12;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(133, 386);
+            this.btnModificar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Location = new System.Drawing.Point(115, 386);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(106, 31);
             this.btnModificar.TabIndex = 17;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_2);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 156);
+            this.label6.Location = new System.Drawing.Point(28, 209);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Stock";
             // 
-            // txtPrecio
+            // txtPrecioCompra
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(31, 130);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(193, 23);
-            this.txtPrecio.TabIndex = 10;
-            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(31, 130);
+            this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Size = new System.Drawing.Size(193, 23);
+            this.txtPrecioCompra.TabIndex = 10;
+            this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(28, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 17);
+            this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Precio";
+            this.label5.Text = "Precio de Compra";
             // 
             // txtDescripcion
             // 
@@ -230,7 +254,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(31, 69);
+            this.txtNombre.Location = new System.Drawing.Point(31, 74);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(193, 23);
             this.txtNombre.TabIndex = 6;
@@ -238,7 +262,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 49);
+            this.label3.Location = new System.Drawing.Point(28, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 5;
@@ -248,7 +272,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Salmon;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(1050, 581);
+            this.btnEliminar.Location = new System.Drawing.Point(1038, 578);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(229, 27);
             this.btnEliminar.TabIndex = 3;
@@ -325,12 +349,21 @@
             this.lblUs.TabIndex = 8;
             this.lblUs.Visible = false;
             // 
+            // lblidP
+            // 
+            this.lblidP.AutoSize = true;
+            this.lblidP.Location = new System.Drawing.Point(658, 635);
+            this.lblidP.Name = "lblidP";
+            this.lblidP.Size = new System.Drawing.Size(0, 17);
+            this.lblidP.TabIndex = 9;
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.lblidP);
             this.Controls.Add(this.lblUs);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.radioButton3);
@@ -371,7 +404,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label6;
@@ -382,5 +415,8 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label lblValor;
         public System.Windows.Forms.Label lblUs;
+        private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblidP;
     }
 }

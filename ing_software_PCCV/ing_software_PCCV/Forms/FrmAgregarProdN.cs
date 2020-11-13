@@ -28,14 +28,14 @@ namespace ing_software_PCCV.Forms
         {
             string nombre = txtNombreV.Text;
             string descripcion = txtDescripcionV.Text;
-            string precio = txtPrecioC.Text;
+            string precioCompra = txtPrecioC.Text;
             string cantidad = txtCantidadV.Text;
             string talla = txtTalla.Text;
             string precioVenta = txtPrecioVenta.Text;
             bool nom = validarNombre(nombre);
             if (nom)
             {
-                agregar(nombre, precio,precioVenta, cantidad, talla, descripcion);
+                agregar(nombre, precioVenta,precioCompra, cantidad, talla, descripcion);
             }
             else
             {
@@ -100,7 +100,7 @@ namespace ing_software_PCCV.Forms
             if (rbtnBisuteria.Checked == true)
             {
                 lblCategoria.Text = "9";
-                lblTalla.Text = "Unidades";
+                lblTalla.Text = "Medidas";
             }
         }
 
@@ -152,8 +152,8 @@ namespace ing_software_PCCV.Forms
             DataGridViewRow fila = new DataGridViewRow();
             fila.CreateCells(dgvLista);
             fila.Cells[0].Value = nombre;
-            fila.Cells[1].Value = precio;
-            fila.Cells[2].Value = precioVenta;
+            fila.Cells[1].Value = precioVenta;
+            fila.Cells[2].Value = precio;
             fila.Cells[3].Value = medida;
             fila.Cells[4].Value = cant;
             fila.Cells[5].Value = desc;
@@ -217,7 +217,7 @@ namespace ing_software_PCCV.Forms
                     string estado = "1";
                     string fac = txtFactura.Text;
                     string cat = Cat[i].ToString();
-                   string cf=  ODm.agregarProductoNuevo(us,nom,decr,prec, precV,med,cat,estado,fac,canti,pro);
+                   string cf=  ODm.agregarProductoNuevo(us,nom,decr,precV, prec,med,cat,estado,fac,canti,pro);
                     Console.WriteLine(cf);
         }
 

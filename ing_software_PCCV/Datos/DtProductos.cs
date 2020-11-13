@@ -41,7 +41,7 @@ namespace Datos
         }
       
 
-        public void Editar(int id, string nombre, string descripcion, decimal precio, int stock, string talla,int estado, int usuario)
+        public void Editar(int id, string nombre, string descripcion, decimal precioVenta ,decimal precioCompra, int stock, string talla,int estado, int usuario)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SPActualizarProducto";
@@ -49,7 +49,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@idProducto", id);
             comando.Parameters.AddWithValue("@Nombre", nombre);
             comando.Parameters.AddWithValue("@Descripcion", descripcion);
-            comando.Parameters.AddWithValue("@Precio", precio);
+            comando.Parameters.AddWithValue("@PrecioVenta", precioVenta);
+            comando.Parameters.AddWithValue("@PrecioCompra", precioCompra);
             comando.Parameters.AddWithValue("@Stock", stock);
             comando.Parameters.AddWithValue("@Talla", talla);
             comando.Parameters.AddWithValue("@Estado", estado);
