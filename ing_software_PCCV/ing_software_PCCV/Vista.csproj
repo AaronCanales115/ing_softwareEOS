@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>c-temperature-folded-icon_30475.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -141,10 +144,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="c-temperature-folded-icon_30475.ico" />
     <Content Include="imagenes\068minimize_100011.png" />
     <Content Include="imagenes\1497619953-jd27_85177.png" />
     <Content Include="imagenes\1499345621-contact_85338.png" />
     <Content Include="imagenes\4115230-cancel-close-cross-delete_114048.png" />
+    <Content Include="imagenes\c-temperature-folded-icon_30475.ico" />
     <Content Include="imagenes\c-temperature-folded-icon_30475.png" />
     <Content Include="imagenes\Close Window_ 2 48px.png" />
     <Content Include="imagenes\imq.PNG" />
