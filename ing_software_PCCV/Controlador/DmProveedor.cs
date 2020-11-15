@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using System.Windows.Forms;
+using System.Data;
+
 namespace Controlador
 {
     public class DmProveedor
@@ -26,5 +28,10 @@ namespace Controlador
         {
             oDt.EliminarProveedores(Convert.ToInt32(idProveedor));
         }
+         public void NFactura(TextBox txtNumero)
+        {
+            txtNumero.Text = oDt.Factura();
+        }
+        
     }
 }

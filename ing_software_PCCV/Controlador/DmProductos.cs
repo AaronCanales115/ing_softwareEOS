@@ -26,7 +26,7 @@ namespace Controlador
         {
 
             int valor = Convert.ToInt16(numero);
-            oDt.mostrarProductos(dgv, valor);
+            oDt.mostrarProductosVentas(dgv, valor);
             dgv.Columns["ID"].Visible = false;
 
 

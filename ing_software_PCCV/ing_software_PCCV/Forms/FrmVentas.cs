@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
 using System.Collections;
-
+using Microsoft.VisualBasic;
 namespace ing_software_PCCV.Forms
 {
     public partial class FrmVentas : Form
@@ -22,13 +22,32 @@ namespace ing_software_PCCV.Forms
         DmVentas v = new DmVentas();
         ArrayList arr1 = new ArrayList();
         DmConsultas c = new DmConsultas();
+        DmProveedor pr = new DmProveedor();
         private void FrmVentas_Load(object sender, EventArgs e)
         {
+            LlenarFactura();
             mostrar("1");
+        }
+        private void LlenarFactura()
+        {
+            string res = c.ConsultaSimple("SELECT COUNT(*) FROM Venta");
+            int r = Convert.ToInt32(res);
+            if (r > 0)
+            {
+                pr.NFactura(txtFactura);
+                Timer.Start();
+               
+            }
+            else
+            {
+                string texto = Interaction.InputBox("Ingrese el número inicial de factura", "FACTURA");
+                c.Insertar("UPDATE HistorialCambio SET HistorialCambio.NF = '" + texto + "' WHERE HistorialCambio.idHistorial = 1");
+                txtFactura.Text = texto;
+            }
         }
         private void mostrar(string valor)
         {
-            ODm.MostrarProductos(dgvMostrar, valor);
+            ODm.MostrarProductosVentas(dgvMostrar, valor);
             dgvMostrar.Columns["Descripcion"].Visible = false;
             
         }//mostrar los productos en el datagrid
@@ -258,6 +277,8 @@ namespace ing_software_PCCV.Forms
                             MessageBox.Show("Venta realizada con exito", "VENTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             mostrar("1");
                             LimpiarDGV();
+                            Timer.Stop();
+                            Timer.Start();
                         }
                         else
                         {
@@ -365,5 +386,16 @@ namespace ing_software_PCCV.Forms
                 }
            // }
       }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            pr.NFactura(txtFactura);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Timer.Stop();
+            this.Close();
+        }
     }
 }

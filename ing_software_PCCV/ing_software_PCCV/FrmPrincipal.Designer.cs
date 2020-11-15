@@ -47,6 +47,8 @@
             this.lbldato = new System.Windows.Forms.Label();
             this.lbldato2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +65,8 @@
             this.inicioToolStripMenuItem,
             this.inventarioToolStripMenuItem,
             this.compraDeProductosToolStripMenuItem,
-            this.ventasToolStripMenuItem});
+            this.ventasToolStripMenuItem,
+            this.facturaToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 44);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -226,6 +229,21 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // facturaToolStripMenuItem
+            // 
+            this.facturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelarFacturaToolStripMenuItem});
+            this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
+            this.facturaToolStripMenuItem.Text = "Factura";
+            // 
+            // cancelarFacturaToolStripMenuItem
+            // 
+            this.cancelarFacturaToolStripMenuItem.Name = "cancelarFacturaToolStripMenuItem";
+            this.cancelarFacturaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.cancelarFacturaToolStripMenuItem.Text = "Cancelar Factura";
+            this.cancelarFacturaToolStripMenuItem.Click += new System.EventHandler(this.cancelarFacturaToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,6 +298,8 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelarFacturaToolStripMenuItem;
     }
 }
 

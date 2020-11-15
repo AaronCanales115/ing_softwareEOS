@@ -120,5 +120,11 @@ namespace ing_software_PCCV
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void cancelarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.frmCancelarFacturaV ver = new Forms.frmCancelarFacturaV();
+            ver.ShowDialog();
+        }
     }
 }

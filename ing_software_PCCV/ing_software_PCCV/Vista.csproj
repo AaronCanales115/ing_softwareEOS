@@ -36,6 +36,7 @@
     <ApplicationIcon>c-temperature-folded-icon_30475.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +61,12 @@
     </Compile>
     <Compile Include="Forms\FrmAgregarProdN.Designer.cs">
       <DependentUpon>FrmAgregarProdN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCancelarFacturaV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCancelarFacturaV.Designer.cs">
+      <DependentUpon>frmCancelarFacturaV.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmInventario.cs">
       <SubType>Form</SubType>
@@ -98,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAgregarProdN.resx">
       <DependentUpon>FrmAgregarProdN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCancelarFacturaV.resx">
+      <DependentUpon>frmCancelarFacturaV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>

@@ -31,7 +31,7 @@ namespace Datos
         public void mostrarProductosVentas(DataGridView data, int Numero)
         {
             DataTable tab = new DataTable();
-            SqlCommand sql = new SqlCommand("SPMostrarProductos", conexion.AbrirConexion());
+            SqlCommand sql = new SqlCommand("SPMostrarProductosVentas", conexion.AbrirConexion());
             sql.CommandType = CommandType.StoredProcedure;
             sql.Parameters.AddWithValue("@Valor", Numero);
             sql.ExecuteNonQuery();

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 namespace Datos
 {
     public class DtVentas
@@ -58,6 +58,52 @@ namespace Datos
             catch (Exception)
             {
                 return "NO";
+            }
+        }
+        public void VerVentas(DataGridView data, int Factura)
+        {
+
+            DataTable tab = new DataTable();
+            SqlCommand sql = new SqlCommand("SPVerVentasFactura", conexion.AbrirConexion());
+            sql.CommandType = CommandType.StoredProcedure;
+            sql.Parameters.AddWithValue("@Factura", Factura);
+            sql.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(sql);
+            da.Fill(tab);
+            data.DataSource = tab;
+
+
+        }
+        public DataTable VerProductos(int ID)
+        {
+
+            DataTable tab = new DataTable();
+            SqlCommand sql = new SqlCommand("SPVerProductoVenta", conexion.AbrirConexion());
+            sql.CommandType = CommandType.StoredProcedure;
+            sql.Parameters.AddWithValue("@idVenta", ID);
+            sql.ExecuteNonQuery();
+            SqlDataAdapter da = new SqlDataAdapter(sql);
+            da.Fill(tab);
+            return tab;
+
+
+        }
+        public void Cancelar(int idProducto, int cantidad)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SPCancelarF";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ids", idProducto);
+                comando.Parameters.AddWithValue("@cantidades", cantidad);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
 

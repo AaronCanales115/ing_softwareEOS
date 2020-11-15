@@ -88,5 +88,25 @@ namespace Datos
             }
 
         }
+        public string Factura()
+        {
+            string result = "";
+            SqlDataReader leer;
+            DataTable tabla = new DataTable();
+            SqlCommand comando = new SqlCommand("SPNumeroFactura", conexion.AbrirConexion());
+
+            tabla.Clear();
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+
+            if (tabla.Rows.Count > 0)
+            {
+                result = Convert.ToString(tabla.Rows[0][0]);
+            }
+            Console.WriteLine(result);
+            return result;
+            
+        }
     }
 }

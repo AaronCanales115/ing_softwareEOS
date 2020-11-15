@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -70,6 +71,7 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.lblIdVenta = new System.Windows.Forms.Label();
             this.lblVa = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -99,9 +101,10 @@
             this.btnCerrar.Location = new System.Drawing.Point(1317, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label1
             // 
@@ -511,6 +514,11 @@
             this.lblVa.Text = "0";
             this.lblVa.Visible = false;
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 5000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -588,5 +596,6 @@
         private System.Windows.Forms.Label lblIdVenta;
         private System.Windows.Forms.Label lblVa;
         private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Timer Timer;
     }
 }
