@@ -106,6 +106,92 @@ namespace Datos
                 Console.WriteLine(ex.ToString());
             }
         }
+        public void abrirCaja(decimal valor)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SPAbrirCaja";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Valor", valor);
+              
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
 
-    }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public void CerrarCaja()
+        {
+            string valor = DateTime.Now.ToString("yyyy-MM-dd");
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SPCierreCaja";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Fecha", valor);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        public string montoFinal()
+        {
+            string valor = DateTime.Now.ToString("yyyy-MM-dd");
+            string result= "";
+            SqlCommand sql = new SqlCommand("SPCalcularTotal", conexion.AbrirConexion());
+           
+           
+            DataTable dt = new DataTable();
+            try
+            {
+                
+                sql.CommandType = CommandType.StoredProcedure;
+                sql.Parameters.AddWithValue("@Fecha", valor);
+                sql.ExecuteNonQuery();
+              
+                SqlDataAdapter DA = new SqlDataAdapter(sql);
+                DA.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    result = Convert.ToString(dt.Rows[0][0]);
+                }
+                return result;
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return "0";
+            }
+        }
+        public void AgregarGasto(decimal valor, string descripcion)
+        {
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SPAgregarGastos";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@ValorG", valor);
+                comando.Parameters.AddWithValue("@Fecha", fecha);
+                comando.Parameters.AddWithValue("@Descripcion", descripcion);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+            }
+
+        }
 }

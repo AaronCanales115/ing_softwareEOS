@@ -12,7 +12,7 @@ namespace Datos
         private Conexion conexion = new Conexion();
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-        public void GuardarCompraE(int usuario,string Factura, int cantidad, decimal total, int Proveedor, int idProducto)
+        public void GuardarCompraE(int usuario,string Factura, int cantidad, decimal total, int Proveedor, int idProducto,decimal PrecioC,decimal PrecioV)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SPAgregarCompra";
@@ -23,7 +23,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@total", total);
             comando.Parameters.AddWithValue("@idProveedor", Proveedor);
             comando.Parameters.AddWithValue("@idProducto", idProducto);
-            
+            comando.Parameters.AddWithValue("@PrecioCompra", PrecioC);
+            comando.Parameters.AddWithValue("@PrecioVenta", PrecioV);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }

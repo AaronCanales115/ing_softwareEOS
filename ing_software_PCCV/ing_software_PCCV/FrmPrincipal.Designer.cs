@@ -38,6 +38,8 @@
             this.existenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,8 +49,7 @@
             this.lbldato = new System.Windows.Forms.Label();
             this.lbldato2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +78,8 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesiónToolStripMenuItem});
+            this.cerrarSesiónToolStripMenuItem,
+            this.cerrarCajaToolStripMenuItem});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
@@ -133,6 +135,21 @@
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // facturaToolStripMenuItem
+            // 
+            this.facturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelarFacturaToolStripMenuItem});
+            this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
+            this.facturaToolStripMenuItem.Text = "Factura";
+            // 
+            // cancelarFacturaToolStripMenuItem
+            // 
+            this.cancelarFacturaToolStripMenuItem.Name = "cancelarFacturaToolStripMenuItem";
+            this.cancelarFacturaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.cancelarFacturaToolStripMenuItem.Text = "Cancelar Factura";
+            this.cancelarFacturaToolStripMenuItem.Click += new System.EventHandler(this.cancelarFacturaToolStripMenuItem_Click);
             // 
             // btnCerrar
             // 
@@ -229,20 +246,12 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // facturaToolStripMenuItem
+            // cerrarCajaToolStripMenuItem
             // 
-            this.facturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cancelarFacturaToolStripMenuItem});
-            this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
-            this.facturaToolStripMenuItem.Text = "Factura";
-            // 
-            // cancelarFacturaToolStripMenuItem
-            // 
-            this.cancelarFacturaToolStripMenuItem.Name = "cancelarFacturaToolStripMenuItem";
-            this.cancelarFacturaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.cancelarFacturaToolStripMenuItem.Text = "Cancelar Factura";
-            this.cancelarFacturaToolStripMenuItem.Click += new System.EventHandler(this.cancelarFacturaToolStripMenuItem_Click);
+            this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.cerrarCajaToolStripMenuItem.Text = "Cerrar caja";
+            this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -300,6 +309,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelarFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarCajaToolStripMenuItem;
     }
 }
 

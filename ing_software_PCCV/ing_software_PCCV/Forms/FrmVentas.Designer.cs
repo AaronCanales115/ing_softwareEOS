@@ -72,6 +72,7 @@
             this.lblIdVenta = new System.Windows.Forms.Label();
             this.lblVa = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.lbldesc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -519,12 +520,23 @@
             this.Timer.Interval = 5000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // lbldesc
+            // 
+            this.lbldesc.AutoSize = true;
+            this.lbldesc.Location = new System.Drawing.Point(377, 691);
+            this.lbldesc.Name = "lbldesc";
+            this.lbldesc.Size = new System.Drawing.Size(15, 16);
+            this.lbldesc.TabIndex = 19;
+            this.lbldesc.Text = "0";
+            this.lbldesc.Visible = false;
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1354, 749);
+            this.Controls.Add(this.lbldesc);
             this.Controls.Add(this.lblVa);
             this.Controls.Add(this.lblIdVenta);
             this.Controls.Add(this.lblValor);
@@ -597,5 +609,6 @@
         private System.Windows.Forms.Label lblVa;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Label lbldesc;
     }
 }

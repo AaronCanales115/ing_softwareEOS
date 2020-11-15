@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FrmAbrirCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAbrirCaja.Designer.cs">
+      <DependentUpon>FrmAbrirCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAgregarGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAgregarGastos.Designer.cs">
+      <DependentUpon>FrmAgregarGastos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAgregarProdE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,12 @@
     </Compile>
     <Compile Include="Forms\frmCancelarFacturaV.Designer.cs">
       <DependentUpon>frmCancelarFacturaV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCerrarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCerrarCaja.Designer.cs">
+      <DependentUpon>FrmCerrarCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmInventario.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmAbrirCaja.resx">
+      <DependentUpon>FrmAbrirCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAgregarGastos.resx">
+      <DependentUpon>FrmAgregarGastos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAgregarProdE.resx">
       <DependentUpon>FrmAgregarProdE.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCancelarFacturaV.resx">
       <DependentUpon>frmCancelarFacturaV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCerrarCaja.resx">
+      <DependentUpon>FrmCerrarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
@@ -152,16 +179,20 @@
       <Name>Dominio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reportes\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="c-temperature-folded-icon_30475.ico" />
     <Content Include="imagenes\068minimize_100011.png" />
     <Content Include="imagenes\1497619953-jd27_85177.png" />
     <Content Include="imagenes\1499345621-contact_85338.png" />
     <Content Include="imagenes\4115230-cancel-close-cross-delete_114048.png" />
+    <Content Include="imagenes\business-color_handout_icon-icons.com_53455.png" />
     <Content Include="imagenes\c-temperature-folded-icon_30475.ico" />
     <Content Include="imagenes\c-temperature-folded-icon_30475.png" />
     <Content Include="imagenes\Close Window_ 2 48px.png" />
+    <Content Include="imagenes\iconfindercashiersaleshop4177567-115971_115944.png" />
     <Content Include="imagenes\imq.PNG" />
     <Content Include="imagenes\Logo2.PNG" />
     <Content Include="imagenes\mbrilock_99595.png" />

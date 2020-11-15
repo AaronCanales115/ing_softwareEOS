@@ -167,7 +167,7 @@ namespace ing_software_PCCV.Forms
                 int ca = Convert.ToInt32(cant.Trim());
                 if(ca >= 0)
                 {
-                    double pre = Convert.ToDouble(precio);
+                    double pre = Convert.ToDouble(precioVenta);
                     double a = pre * ca;
 
                     valor = Convert.ToDouble(lblTotal.Text.Trim());

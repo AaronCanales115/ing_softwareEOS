@@ -252,7 +252,7 @@ namespace ing_software_PCCV.Forms
                         string nombre = txtNombre.Text;
                         string apellido = txtApellido.Text;
                         string canti = txtNPiezas.Text;
-                        string desc = txtDescuento.Text;
+                        string desc = lbldesc.Text.Trim();
                         string subt = txtSubTotal.Text;
                         string total1 = lblTotal.Text;
                         string res = v.agregarVenta(nf, usuario, nombre, apellido, canti, desc, subt, total1);
@@ -371,10 +371,15 @@ namespace ing_software_PCCV.Forms
                     
                     int dec = Convert.ToInt32(txtDescuento.Text);
                     txtSubTotal.Text = val2 + "";
-                    if (dec > 0)
+                    if (dec != 0)
                     {
-                      double val3 = val2 * (dec / 100);
-                        lblTotal.Text = (val2 - val3 ) + "";
+                    decimal valor2 = Convert.ToDecimal(val2);
+                      decimal valor =  (dec*valor2);
+                    decimal valor3 = valor / 100;
+                    
+                    decimal tot = (valor2 - valor3);
+                     lblTotal.Text = tot + "";
+                    lbldesc.Text = valor3 + "";
                     }
                     else
                     {

@@ -98,7 +98,8 @@ namespace ing_software_PCCV.Forms
                 string id = dgvMostrar.CurrentRow.Cells["ID"].Value.ToString();
                 string nombre = dgvMostrar.CurrentRow.Cells["Nombre"].Value.ToString();
                 string descripcion =  dgvMostrar.CurrentRow.Cells["Descripcion"].Value.ToString();
-                string precio = dgvMostrar.CurrentRow.Cells["Precio"].Value.ToString();
+                string precioC = dgvMostrar.CurrentRow.Cells["PCompra"].Value.ToString();
+                string precioV = dgvMostrar.CurrentRow.Cells["PVenta"].Value.ToString();
                 string cantidad = dgvMostrar.CurrentRow.Cells["Cantidad"].Value.ToString();
                 if (lblValor.Text.Trim() == "1")
                 {
@@ -122,7 +123,7 @@ namespace ing_software_PCCV.Forms
                bool va = validarNombre(nombre);
                 if (va)
                 {
-                    agregar(id,nombre, Convert.ToDecimal(precio.Trim()), Convert.ToInt32(cantidad));
+                    agregar(id,nombre, Convert.ToDecimal(precioC.Trim()), Convert.ToDecimal(precioV.Trim()), Convert.ToInt32(cantidad));
                 }
                 else
                 {
@@ -135,14 +136,15 @@ namespace ing_software_PCCV.Forms
                 MessageBox.Show("Seleccione una fila");
             }
         }
-        private void agregar(string id,string Nombre,decimal Precio, int existencia)
+        private void agregar(string id,string Nombre,decimal PrecioC,decimal PrecioV, int existencia)
         {
             
             DataGridViewRow fila = new DataGridViewRow();
             fila.CreateCells(dgvLista);
             fila.Cells[0].Value = Nombre;
-            fila.Cells[1].Value = Precio;
-            fila.Cells[2].Value = existencia;
+            fila.Cells[1].Value = PrecioC;
+            fila.Cells[2].Value = PrecioV;
+            fila.Cells[3].Value = existencia;
             
             dgvLista.Rows.Add(fila);
             txtNPiezas.Text = Convert.ToString(dgvLista.Rows.Count);
@@ -229,7 +231,7 @@ namespace ing_software_PCCV.Forms
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            string cantidad;
+            string cantidad,PrecioC,PrecioV;
             int a = dgvLista.Rows.Count;
             string nf = txtFactura.Text;
             if (nf.Trim() == "")
@@ -244,12 +246,14 @@ namespace ing_software_PCCV.Forms
                     {
 
                         string pro = cbxProveedor.SelectedValue.ToString();
-                        cantidad = dgvLista.Rows[i].Cells[3].Value.ToString();
+                        cantidad = dgvLista.Rows[i].Cells[4].Value.ToString();
+                        PrecioC = dgvLista.Rows[i].Cells[1].Value.ToString();
+                        PrecioV = dgvLista.Rows[i].Cells[2].Value.ToString();
                         string id = arr1[i].ToString();
                         string tot = arr2[i].ToString();
 
-
-                        ce.GuardarCompraE("1", nf, cantidad, tot, pro, id);
+                        string id2=c.obtenerID();
+                        ce.GuardarCompraE(id2, nf, cantidad, tot, pro, id,PrecioC,PrecioV);
 
                         Console.WriteLine(nf + " " + pro + " " + cantidad + " " + id + " " + tot);
                     }
@@ -292,7 +296,11 @@ namespace ing_software_PCCV.Forms
                     MessageBox.Show("Error, La cantidad no puede ser 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    // dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
                 }
-                else
+                if (ca == exi)
+                {
+                    MessageBox.Show("Alerta, El producto quedará sin stock", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+               /* else
                 {
                     decimal a = pr * ca;
 
@@ -300,17 +308,17 @@ namespace ing_software_PCCV.Forms
                 if (val <= 0)
                 {
                     txtSubTotal.Text = a + "";
-                    lblTotal.Text = a + "";
+                   // lblTotal.Text = a + "";
                 }
                 else
                 {
                     ab = a + val;
                     txtSubTotal.Text = ab + "";
-                    lblTotal.Text = ab + "";
+                  //  lblTotal.Text = ab + "";
                 }
-                arr2.Add(a);
+             
             }
-
+            */
             
                
 
@@ -368,6 +376,32 @@ namespace ing_software_PCCV.Forms
         {
             FrmProveedores pr = new FrmProveedores();
             pr.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            double val2 = 0;
+            for (int i = 0; i < dgvLista.RowCount; i++)
+            {
+                string cantidad = dgvLista.Rows[i].Cells[4].Value.ToString();
+                string precio = dgvLista.Rows[i].Cells[1].Value.ToString();
+                int cant = Convert.ToInt32(cantidad);
+                double pre = Convert.ToDouble(precio);
+
+                double val1 = cant * pre;
+                val2 = val1 + val2;
+                arr2.Add(val2);
+
+            }
+
+        
+            txtSubTotal.Text = val2 + "";
+            lblTotal.Text = (val2) + "";
+           
+        
+            //for (int i = 0; i < dgvLista.RowCount; i++)
+       
         }
     }
        

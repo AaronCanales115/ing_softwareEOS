@@ -42,5 +42,22 @@ namespace Controlador
         {
             oDt.Cancelar(Convert.ToInt32(Ids), Convert.ToInt32(Cantidades));
         }
+        public void abrirCaja(string valor)
+        {
+            oDt.abrirCaja(Convert.ToDecimal(valor));
+        }
+        public void Cerrar()
+        {
+            oDt.CerrarCaja();
+        }
+        public string MontoFinal()
+        {
+           string monto =  oDt.montoFinal();
+            return monto;
+        }
+        public void AgregarGasto(string valor, string desc)
+        {
+            oDt.AgregarGasto(Convert.ToDecimal(valor),desc);
+        }
     }
 }

@@ -69,6 +69,7 @@ namespace ing_software_PCCV
             FormBorderStyle = FormBorderStyle.None;
             string v, v2, v3;
             ArrayList arr = new ArrayList();
+            Frame();
             string valor = lbldato.Text.Trim();
          arr =   con.Consulta("SELECT Nombre, Apellido,Rol.Descripcion FROM Usuario,Rol WHERE Usuario.tipo = Rol.idRol AND idUsuario ='"+valor+"'");
 
@@ -87,6 +88,18 @@ namespace ing_software_PCCV
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void Frame()
+        {
+            Forms.FrmAbrirCaja ac = new Forms.FrmAbrirCaja();
+          
+            string cons = con.ConsultaSimple("SELECT Cuentas.Puerta FROM Cuentas WHERE Cuentas.idCuentas = 1;");
+            int dato = Convert.ToInt32(cons);
+            if(dato == 1)
+            {
+                ac.ShowDialog();
+            }
+          
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,6 +138,12 @@ namespace ing_software_PCCV
         {
             Forms.frmCancelarFacturaV ver = new Forms.frmCancelarFacturaV();
             ver.ShowDialog();
+        }
+
+        private void cerrarCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FrmCerrarCaja cc = new Forms.FrmCerrarCaja();
+            cc.ShowDialog();
         }
     }
 }
