@@ -218,10 +218,15 @@ namespace ing_software_PCCV.Forms
                     if (ca == 0)
                     {
                         MessageBox.Show("Error, La cantidad no puede ser 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
+                    }
+                    if (ca == exi)
+                    {
+                        MessageBox.Show("Este producto quedará sin existencias", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         // dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
                     }
-                  
-                    }
+
+                }
                 
 
 

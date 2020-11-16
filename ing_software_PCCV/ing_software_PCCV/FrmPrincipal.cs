@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
 using System.Collections;
+using DevExpress.XtraReports.UI;
 
 namespace ing_software_PCCV
 {
@@ -144,6 +145,18 @@ namespace ing_software_PCCV
         {
             Forms.FrmCerrarCaja cc = new Forms.FrmCerrarCaja();
             cc.ShowDialog();
+        }
+
+        private void libroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.RptLibroDiario rp = new Reportes.RptLibroDiario();
+            rp.ShowPreview();
+        }
+
+        private void agregarGastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.FrmAgregarGastos ag = new Forms.FrmAgregarGastos();
+            ag.ShowDialog();
         }
     }
 }

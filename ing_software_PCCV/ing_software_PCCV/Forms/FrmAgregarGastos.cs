@@ -25,6 +25,9 @@ namespace ing_software_PCCV.Forms
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             v.AgregarGasto(txtMonto.Text.Trim(), txtDesc.Text);
+            MessageBox.Show("Gasto guardado con éxito ","Guardar Gasto", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            txtDesc.Text = "";
+            txtMonto.Text = "";
         }
 
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)

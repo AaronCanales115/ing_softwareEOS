@@ -13,7 +13,7 @@ namespace Datos
         private Conexion conexion = new Conexion();
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-       
+
         public string agregarVenta(string NFactura, int usuario, string nombreC, string apellidoC, int cantidadProductos, decimal descuento, decimal subTotal, decimal total)
         {
             try
@@ -99,7 +99,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@cantidades", cantidad);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
-                
+
             }
             catch (Exception ex)
             {
@@ -114,7 +114,7 @@ namespace Datos
                 comando.CommandText = "SPAbrirCaja";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Valor", valor);
-              
+
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
 
@@ -145,18 +145,18 @@ namespace Datos
         public string montoFinal()
         {
             string valor = DateTime.Now.ToString("yyyy-MM-dd");
-            string result= "";
+            string result = "";
             SqlCommand sql = new SqlCommand("SPCalcularTotal", conexion.AbrirConexion());
-           
-           
+
+
             DataTable dt = new DataTable();
             try
             {
-                
+
                 sql.CommandType = CommandType.StoredProcedure;
                 sql.Parameters.AddWithValue("@Fecha", valor);
                 sql.ExecuteNonQuery();
-              
+
                 SqlDataAdapter DA = new SqlDataAdapter(sql);
                 DA.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -164,7 +164,7 @@ namespace Datos
                     result = Convert.ToString(dt.Rows[0][0]);
                 }
                 return result;
-                
+
             }
             catch (Exception ex)
             {
@@ -194,4 +194,26 @@ namespace Datos
             }
 
         }
+        public void RegistrarFacCancelada(int factura,decimal monto, int idv)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "SPRegistrarFacturaC";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@factura", factura);
+                comando.Parameters.AddWithValue("@Monto", monto);
+                comando.Parameters.AddWithValue("@idv", idv);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+    }
 }

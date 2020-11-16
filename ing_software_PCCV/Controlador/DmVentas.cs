@@ -59,5 +59,9 @@ namespace Controlador
         {
             oDt.AgregarGasto(Convert.ToDecimal(valor),desc);
         }
+        public void RegistrarFacCancelada(string factura,string monto, string idv)
+        {
+            oDt.RegistrarFacCancelada(Convert.ToInt32(factura), Convert.ToDecimal(monto),Convert.ToInt32(idv));
+        }
     }
 }

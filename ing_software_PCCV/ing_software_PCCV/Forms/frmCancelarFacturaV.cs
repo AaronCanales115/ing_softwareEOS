@@ -79,7 +79,10 @@ namespace ing_software_PCCV.Forms
         private void Eliminar()
         {
             string id = dgvMostrar.CurrentRow.Cells["ID"].Value.ToString();
-            c.Insertar("UPDATE Venta SET Venta.EstadoVenta = 2 WHERE Venta.idVenta = '"+id+"'");
+            string Factura = dgvMostrar.CurrentRow.Cells["Factura"].Value.ToString();
+            string Total = dgvMostrar.CurrentRow.Cells["Total"].Value.ToString();
+            Console.WriteLine(id + " "+ Factura + " " + Total);
+           ventas.RegistrarFacCancelada(Factura,Total,id);
           
             for(int i = 0; i < IDS.Count; i++)
             {

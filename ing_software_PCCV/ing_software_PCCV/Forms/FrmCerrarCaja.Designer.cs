@@ -106,6 +106,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCerrarCaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cerrar Caja";
             this.Load += new System.EventHandler(this.FrmCerrarCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
