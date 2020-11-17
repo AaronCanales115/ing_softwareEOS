@@ -109,6 +109,12 @@
     <Compile Include="Forms\FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmIpSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIpSesion.Designer.cs">
+      <DependentUpon>FrmIpSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIpSesion.resx">
+      <DependentUpon>FrmIpSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
@@ -219,6 +228,7 @@
     <Content Include="imagenes\Close Window_ 2 48px.png" />
     <Content Include="imagenes\iconfindercashiersaleshop4177567-115971_115944.png" />
     <Content Include="imagenes\imq.PNG" />
+    <Content Include="imagenes\inicio.png" />
     <Content Include="imagenes\Logo2.PNG" />
     <Content Include="imagenes\mbrilock_99595.png" />
     <Content Include="imagenes\minimize_118918.png" />

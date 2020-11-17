@@ -25,6 +25,7 @@ namespace ing_software_PCCV
         private void Login_Load(object sender, EventArgs e)
         {
            
+
             string IPM = IP.ObtenerMac();
            string ip = consultas.ConsultaSimple("SELECT IpMaquina.idUsuario FROM IpMaquina WHERE ipMaquina ='"+IPM.Trim()+"'");
           Console.WriteLine(ip);
