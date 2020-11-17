@@ -45,6 +45,7 @@
     <Compile Include="DmArchivo.cs" />
     <Compile Include="DmComprasE.cs" />
     <Compile Include="DmConsultas.cs" />
+    <Compile Include="DmGraficos.cs" />
     <Compile Include="DmLogin.cs" />
     <Compile Include="DmObtenerIP.cs" />
     <Compile Include="DmProductos.cs" />
