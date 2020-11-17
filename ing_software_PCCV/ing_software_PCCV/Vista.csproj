@@ -229,9 +229,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controlador\f.csproj">
+    <ProjectReference Include="..\Controlador\Dominio.csproj">
       <Project>{92cd8084-61d8-431a-a5bf-aa17521f707f}</Project>
-      <Name>f</Name>
+      <Name>Dominio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
