@@ -44,6 +44,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DtComprasE.cs" />
     <Compile Include="DtConsultas.cs" />
+    <Compile Include="DtGraficos.cs" />
     <Compile Include="DtLogin.cs" />
     <Compile Include="DtProductos.cs" />
     <Compile Include="DtProveedor.cs" />

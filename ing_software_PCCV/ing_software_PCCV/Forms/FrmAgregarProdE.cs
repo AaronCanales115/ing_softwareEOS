@@ -283,7 +283,7 @@ namespace ing_software_PCCV.Forms
             }
             else
             {
-                decimal ab = 0;
+                
                 string precio = dgvLista.CurrentRow.Cells["PCompra"].Value.ToString();
                 string cant = dgvLista.CurrentRow.Cells["Cantidad"].Value.ToString();
                 string ex = dgvLista.CurrentRow.Cells["Existencias"].Value.ToString();
@@ -294,31 +294,9 @@ namespace ing_software_PCCV.Forms
                 if (ca == 0)
                 {
                     MessageBox.Show("Error, La cantidad no puede ser 0", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                   // dgvLista.CurrentRow.Cells["Cantidad"].Value = 0;
+                  
                 }
-                if (ca == exi)
-                {
-                    MessageBox.Show("Alerta, El producto quedará sin stock", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-               /* else
-                {
-                    decimal a = pr * ca;
-
-                decimal val = Convert.ToDecimal(txtSubTotal.Text.Trim());
-                if (val <= 0)
-                {
-                    txtSubTotal.Text = a + "";
-                   // lblTotal.Text = a + "";
-                }
-                else
-                {
-                    ab = a + val;
-                    txtSubTotal.Text = ab + "";
-                  //  lblTotal.Text = ab + "";
-                }
-             
-            }
-            */
+               
             
                
 

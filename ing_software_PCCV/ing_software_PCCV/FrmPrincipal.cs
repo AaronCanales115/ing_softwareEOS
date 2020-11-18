@@ -158,5 +158,15 @@ namespace ing_software_PCCV
             Forms.FrmAgregarGastos ag = new Forms.FrmAgregarGastos();
             ag.ShowDialog();
         }
+
+        private void ventasPorAñoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Graficos.GrVentasMensuales());
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirForm(new Graficos.GrCategorias());
+        }
     }
 }

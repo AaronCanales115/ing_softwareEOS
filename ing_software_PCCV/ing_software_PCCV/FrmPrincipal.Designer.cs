@@ -33,6 +33,7 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compraDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,8 @@
             this.cancelarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gráficosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasPorAñoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,7 +55,7 @@
             this.lbldato = new System.Windows.Forms.Label();
             this.lbldato2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.agregarGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +74,8 @@
             this.compraDeProductosToolStripMenuItem,
             this.ventasToolStripMenuItem,
             this.facturaToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.gráficosToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 44);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -102,6 +106,13 @@
             this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarCajaToolStripMenuItem.Text = "Cerrar caja";
             this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
+            // 
+            // agregarGastosToolStripMenuItem
+            // 
+            this.agregarGastosToolStripMenuItem.Name = "agregarGastosToolStripMenuItem";
+            this.agregarGastosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarGastosToolStripMenuItem.Text = "Agregar Gastos";
+            this.agregarGastosToolStripMenuItem.Click += new System.EventHandler(this.agregarGastosToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
@@ -177,6 +188,22 @@
             this.libroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.libroToolStripMenuItem.Text = "Libro Díario";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
+            // 
+            // gráficosToolStripMenuItem
+            // 
+            this.gráficosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ventasPorAñoToolStripMenuItem,
+            this.categoriasToolStripMenuItem});
+            this.gráficosToolStripMenuItem.Name = "gráficosToolStripMenuItem";
+            this.gráficosToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.gráficosToolStripMenuItem.Text = "Gráficos";
+            // 
+            // ventasPorAñoToolStripMenuItem
+            // 
+            this.ventasPorAñoToolStripMenuItem.Name = "ventasPorAñoToolStripMenuItem";
+            this.ventasPorAñoToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.ventasPorAñoToolStripMenuItem.Text = "Ventas por año";
+            this.ventasPorAñoToolStripMenuItem.Click += new System.EventHandler(this.ventasPorAñoToolStripMenuItem_Click);
             // 
             // btnCerrar
             // 
@@ -273,12 +300,12 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // agregarGastosToolStripMenuItem
+            // categoriasToolStripMenuItem
             // 
-            this.agregarGastosToolStripMenuItem.Name = "agregarGastosToolStripMenuItem";
-            this.agregarGastosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarGastosToolStripMenuItem.Text = "Agregar Gastos";
-            this.agregarGastosToolStripMenuItem.Click += new System.EventHandler(this.agregarGastosToolStripMenuItem_Click);
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -340,6 +367,9 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem libroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarGastosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gráficosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventasPorAñoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
     }
 }
 
